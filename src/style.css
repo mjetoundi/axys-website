@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #0f1419;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Satoshi", sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    font-family: "Satoshi", sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: "Satoshi", sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-xl hover:shadow-primary/50 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:brightness-110 hover:shadow-xl active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-xl-plus shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:px-6 lg:px-8 lg:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+}

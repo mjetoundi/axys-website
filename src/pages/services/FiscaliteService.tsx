@@ -1,0 +1,770 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  FileText, 
+  CheckCircle, 
+  ArrowRight, 
+  Calculator,
+  TrendingDown,
+  Shield,
+  Clock,
+  Award,
+  TrendingUp,
+  PiggyBank,
+  Scale,
+  Building
+} from 'lucide-react';
+import Card from '../../components/ui/Card';
+import Button from '../../components/ui/Button';
+import Breadcrumbs from '../../components/ui/Breadcrumbs';
+
+const FiscaliteService: React.FC = () => {
+  const breadcrumbs = [
+    { label: 'Accueil', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'Fiscalité & Advisory', href: '/services/fiscalite' }
+  ];
+
+  const interventionAreas = [
+    {
+      id: 'optimisation',
+      title: 'Optimisation Fiscale',
+      description: 'Réduction légale de votre charge fiscale grâce à nos stratégies expertes',
+      features: [
+        'Audit fiscal approfondi',
+        'Stratégies d\'optimisation IS/IR',
+        'Montages juridiques adaptés',
+        'Crédit d\'impôt et niches fiscales'
+      ],
+      icon: TrendingDown
+    },
+    {
+      id: 'conseil',
+      title: 'Conseil Fiscal Stratégique',
+      description: 'Accompagnement dans vos décisions à fort impact fiscal',
+      features: [
+        'Conseil acquisitions/cessions',
+        'Restructurations et holdings',
+        'Transmission d\'entreprise',
+        'Fiscalité internationale'
+      ],
+      icon: Scale
+    },
+    {
+      id: 'conformite',
+      title: 'Conformité & Déclarations',
+      description: 'Gestion complète de vos obligations fiscales',
+      features: [
+        'Liasses fiscales annuelles',
+        'Déclarations TVA et CET',
+        'Contrôles et contentieux',
+        'Veille réglementaire'
+      ],
+      icon: Shield
+    }
+  ];
+
+  const processSteps = [
+    {
+      step: '1',
+      title: 'Audit Fiscal Initial',
+      description: 'Analyse complète de votre situation fiscale actuelle et identification des optimisations',
+      duration: '2-3 semaines'
+    },
+    {
+      step: '2',
+      title: 'Stratégie Personnalisée',
+      description: 'Élaboration d\'une stratégie fiscale sur-mesure adaptée à vos objectifs',
+      duration: '1-2 semaines'
+    },
+    {
+      step: '3',
+      title: 'Mise en Œuvre',
+      description: 'Implémentation des optimisations et montages juridiques recommandés',
+      duration: '2-8 semaines'
+    },
+    {
+      step: '4',
+      title: 'Suivi & Déclarations',
+      description: 'Gestion courante des obligations fiscales et suivi des optimisations',
+      duration: 'Ongoing'
+    },
+    {
+      step: '5',
+      title: 'Pilotage Continu',
+      description: 'Veille fiscale et ajustements stratégiques en fonction des évolutions',
+      duration: 'Annuel'
+    }
+  ];
+
+  const caseStudies = [
+    {
+      client: 'Holding Familiale',
+      sector: 'Investissement',
+      size: '10M€ de patrimoine',
+      challenge: 'Optimisation fiscale transmission familiale et réduction ISF/IFI',
+      solution: 'Restructuration holding + pacte Dutreil + optimisation ISF/IFI',
+      result: 'Économie fiscale 40% + Transmission optimisée + IFI réduit de 85%'
+    },
+    {
+      client: 'Groupe Industrial',
+      sector: 'Manufacturing',
+      size: '50M€ CA annuel',
+      challenge: 'Optimisation IS et restructuration post-acquisition internationale',
+      solution: 'Intégration fiscale + crédit impôt recherche + optimisation holding',
+      result: 'Économie IS 25% + CIR optimisé +1.2M€ + Structure internationale'
+    },
+    {
+      client: 'Startup Tech',
+      sector: 'Technologie',
+      size: 'Série A 5M€',
+      challenge: 'Structuration fiscale optimale pour croissance et exit strategy',
+      solution: 'Holding JEI + optimisation carry + fiscalité internationale',
+      result: 'JEI 2 ans + Carry optimisé + Exit strategy fiscalement efficiente'
+    }
+  ];
+
+  const pricingPlans = [
+    {
+      name: 'Conseil Ponctuel',
+      price: 'À partir de 2 500 €',
+      features: [
+        'Audit fiscal ciblé',
+        'Recommandations prioritaires',
+        'Plan d\'action détaillé',
+        '2h conseil téléphonique',
+        'Suivi 3 mois'
+      ],
+      popular: false
+    },
+    {
+      name: 'Accompagnement Annuel',
+      price: 'À partir de 8 500 €',
+      features: [
+        'Audit fiscal complet',
+        'Stratégie fiscale personnalisée',
+        'Mise en œuvre accompagnée',
+        'Déclarations fiscales incluses',
+        'Veille et conseil continu',
+        'Support prioritaire'
+      ],
+      popular: true
+    },
+    {
+      name: 'Advisory Premium',
+      price: 'Sur devis',
+      features: [
+        'Directeur fiscal externe dédié',
+        'Optimisations complexes',
+        'Montages juridico-fiscaux',
+        'Fiscalité internationale',
+        'Accompagnement contentieux',
+        'Conseil board et dirigeants'
+      ],
+      popular: false
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: PiggyBank,
+      title: 'Économies Substantielles',
+      description: 'Réduction moyenne de 25-40% de votre charge fiscale annuelle'
+    },
+    {
+      icon: Shield,
+      title: 'Sécurité Juridique',
+      description: 'Conformité totale et anticipation des risques fiscaux'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Performance Optimisée',
+      description: 'Amélioration de votre rentabilité nette et cash-flow'
+    },
+    {
+      icon: Award,
+      title: 'Expertise Reconnue',
+      description: 'Fiscalistes experts diplômés et spécialisés par secteur'
+    }
+  ];
+
+  const fiscalDomains = [
+    {
+      category: 'Fiscalité des Entreprises',
+      items: [
+        'Impôt sur les sociétés (IS)',
+        'Contribution économique territoriale (CET)',
+        'Taxes sur les salaires',
+        'Crédits d\'impôts (CIR, CII, CICE...)',
+        'Déficits reportables',
+        'Intégration fiscale',
+        'Régimes spéciaux (JEI, ZFU...)'
+      ]
+    },
+    {
+      category: 'Fiscalité des Dirigeants',
+      items: [
+        'Impôt sur le revenu (IR)',
+        'Prélèvements sociaux',
+        'Impôt sur la fortune immobilière (IFI)',
+        'Plus-values professionnelles',
+        'Stock-options et BSPCE',
+        'Carried interest',
+        'Expatriation fiscale'
+      ]
+    },
+    {
+      category: 'Opérations Spéciales',
+      items: [
+        'Fusions-acquisitions',
+        'LBO et montages financiers',
+        'Restructurations',
+        'Transmissions d\'entreprise',
+        'Pacte Dutreil',
+        'Apport-cession',
+        'Fiscalité internationale'
+      ]
+    }
+  ];
+
+  const optimisationTechniques = [
+    'Amortissements dégressifs et exceptionnels',
+    'Provisions pour risques et charges',
+    'Déficits et moins-values reportables',
+    'Crédit d\'impôt recherche optimisé',
+    'Intégration et consolidation fiscale',
+    'Holdings et sociétés mères',
+    'Montages de défiscalisation légale',
+    'Optimisation TVA et taxes annexes'
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="section-padding bg-gray-light">
+        <Breadcrumbs items={breadcrumbs} />
+        
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <FileText className="w-8 h-8 text-white" />
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
+                Fiscalité & Advisory
+              </h1>
+              <p className="text-xl text-gray-support mb-8 leading-relaxed">
+                Optimisation fiscale stratégique et conseil expert. Maximisez votre performance 
+                économique tout en sécurisant votre conformité fiscale.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  icon={ArrowRight}
+                  className="w-full sm:w-auto"
+                >
+                  Audit fiscal gratuit
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
+                  Calculer vos économies
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-[4/3] bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-2xl flex items-center justify-center">
+                <div className="text-center text-white">
+                  <Calculator className="w-24 h-24 mx-auto mb-4 opacity-80" />
+                  <p className="text-lg font-semibold">Fiscalité & Advisory</p>
+                  <p className="text-blue-200">Optimisation & Conformité</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Overview */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Pourquoi Optimiser Votre Fiscalité ?
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Des économies significatives pour booster votre rentabilité
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-dark mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-support text-sm">
+                  {benefit.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Overview */}
+      <section className="section-padding bg-gray-light">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
+              <h2 className="text-3xl font-bold text-neutral-dark mb-6">
+                Fiscalité & Advisory : Votre Avantage Concurrentiel
+              </h2>
+              
+              <div className="prose prose-lg text-neutral-dark space-y-6">
+                <p>
+                  La fiscalité d'entreprise représente l'un des leviers les plus puissants 
+                  d'optimisation de votre rentabilité. Une stratégie fiscale bien pensée 
+                  peut transformer vos charges en opportunités d'économies durables.
+                </p>
+                
+                <p>
+                  Notre approche conseil fiscal couvre trois dimensions stratégiques :
+                </p>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong>Optimisation immédiate :</strong> Réduction de vos charges fiscales actuelles par des techniques éprouvées</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong>Stratégie long terme :</strong> Structuration fiscalement efficiente pour vos projets de développement</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong>Sécurisation complète :</strong> Conformité légale et anticipation des risques de contrôle</span>
+                  </li>
+                </ul>
+                
+                <p>
+                  Nos fiscalistes experts, diplômés et spécialisés par secteur, 
+                  maîtrisent les subtilités réglementaires et les dernières évolutions 
+                  législatives pour vous garantir une optimisation maximale en toute légalité.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary/5 rounded-2xl p-6 mb-6">
+                <h3 className="text-xl font-semibold text-neutral-dark mb-4">
+                  Techniques d'Optimisation
+                </h3>
+                <div className="space-y-2">
+                  {optimisationTechniques.slice(0, 6).map((technique, index) => (
+                    <div key={index} className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-neutral-dark">{technique}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-secondary/5 rounded-2xl p-6">
+                <h3 className="text-xl font-semibold text-neutral-dark mb-4">
+                  Résultats Moyens
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-dark">Économie IS</span>
+                    <span className="text-secondary font-bold">-30%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-dark">Optimisation CET</span>
+                    <span className="text-secondary font-bold">-20%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-dark">Crédits d'impôt</span>
+                    <span className="text-secondary font-bold">+50%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-dark">ROI annuel</span>
+                    <span className="text-secondary font-bold">500%</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fiscal Domains */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Nos Domaines de Spécialisation
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Une expertise complète pour tous vos enjeux fiscaux
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {fiscalDomains.map((domain, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full">
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-neutral-dark mb-4">
+                      {domain.category}
+                    </h3>
+                    <ul className="space-y-3">
+                      {domain.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start space-x-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-neutral-dark">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intervention Areas */}
+      <section className="section-padding bg-gray-light">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Nos Services Fiscaux
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Trois piliers pour une fiscalité optimisée et sécurisée
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {interventionAreas.map((area, index) => (
+              <motion.div
+                key={area.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full">
+                  <div className="p-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                      <area.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-neutral-dark mb-3">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-support mb-4">
+                      {area.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {area.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start space-x-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-neutral-dark">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Succès d'Optimisation Fiscale
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Découvrez les économies réalisées par nos clients
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full">
+                  <div className="p-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <span className="text-primary font-semibold text-sm">
+                          {study.client.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-neutral-dark">{study.client}</h3>
+                        <p className="text-sm text-gray-support">{study.sector} • {study.size}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4 text-sm">
+                      <div>
+                        <h4 className="font-semibold text-neutral-dark mb-1">Enjeu:</h4>
+                        <p className="text-gray-support">{study.challenge}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-neutral-dark mb-1">Solution:</h4>
+                        <p className="text-gray-support">{study.solution}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-neutral-dark mb-1">Résultat:</h4>
+                        <p className="text-primary font-semibold">{study.result}</p>
+                      </div>
+                    </div>
+                    
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      icon={ArrowRight}
+                      className="mt-4 w-full"
+                    >
+                      Voir l'étude complète
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Steps */}
+      <section className="section-padding bg-neutral-dark text-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              Notre Processus d'Optimisation
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Une approche méthodique pour maximiser vos économies fiscales
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-5 gap-8">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold">{step.step}</span>
+                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-primary/30 -ml-8"></div>
+                  )}
+                </div>
+                <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
+                <p className="text-gray-300 text-sm mb-2">{step.description}</p>
+                <span className="text-primary text-xs font-semibold">{step.duration}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Investissement et Retour sur Investissement
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Des honoraires largement compensés par vos économies fiscales
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {pricingPlans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className={`h-full ${plan.popular ? 'ring-2 ring-primary' : ''} relative`}>
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Le plus rentable
+                      </span>
+                    </div>
+                  )}
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+                      {plan.name}
+                    </h3>
+                    <p className="text-3xl font-bold text-primary mb-6">
+                      {plan.price}
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-3">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                          <span className="text-neutral-dark text-left">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      variant={plan.popular ? "primary" : "outline"} 
+                      size="lg"
+                      className="w-full"
+                    >
+                      Démarrer l'optimisation
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-primary text-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Prêt à Optimiser Votre Fiscalité ?
+            </h2>
+            <p className="text-lg text-blue-100 leading-relaxed mb-8">
+              Nos experts fiscalistes identifient immédiatement vos opportunités d'économies. 
+              Audit fiscal gratuit et sans engagement sous 48h.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                icon={ArrowRight}
+                href="/contact"
+                className="w-full sm:w-auto"
+              >
+                Audit fiscal gratuit
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                href="/contact"
+                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
+              >
+                Simulateur d'économies
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default FiscaliteService;

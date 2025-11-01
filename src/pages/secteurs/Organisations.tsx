@@ -1,0 +1,471 @@
+import React from "react";
+import { motion } from "framer-motion";
+import PageHero from "../../components/ui/PageHero";
+import SectionHeader from "../../components/ui/SectionHeader";
+import Card from "../../components/ui/Card";
+import Button from "../../components/ui/Button";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import {
+  Users,
+  Heart,
+  FileCheck2,
+  Scale,
+  Euro,
+  BookOpen,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+
+const services = [
+  {
+    icon: Euro,
+    title: "Gestion Financière Associative",
+    description:
+      "Comptabilité associative, plan comptable adapté, gestion budgets projets, suivi subventions et dons avec justificatifs.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Audit Légal & Reporting",
+    description:
+      "Audit commissaire aux comptes, certification comptes annuels, rapport financier pour assemblées générales et autorités.",
+  },
+  {
+    icon: Scale,
+    title: "Gouvernance Associative",
+    description:
+      "Structuration conseil d'administration, procédures décisionnelles, règlements intérieurs, conformité statuts et lois.",
+  },
+  {
+    icon: BookOpen,
+    title: "Subventions & Financements",
+    description:
+      "Dossiers de subventions publiques, mécénat d'entreprise, crowdfunding, optimisation ressources et diversification financements.",
+  },
+];
+
+const associationTypes = [
+  {
+    type: "Associations d'Intérêt Général",
+    examples: "Humanitaire, environnement, éducation, santé",
+    specificities: [
+      "Reçus fiscaux pour dons",
+      "Exonérations fiscales",
+      "Reporting rigoureux donateurs",
+    ],
+  },
+  {
+    type: "Associations Culturelles & Sportives",
+    examples: "Clubs sportifs, compagnies théâtre, musées",
+    specificities: [
+      "Billetterie et adhésions",
+      "Licences et affiliations",
+      "Gestion bénévoles et salariés",
+    ],
+  },
+  {
+    type: "Fondations & Fonds de Dotation",
+    examples: "Fondations familiales, corporate, recherche",
+    specificities: [
+      "Gestion dotation en capital",
+      "Conformité fondation reconnue",
+      "Reporting missions d'intérêt général",
+    ],
+  },
+  {
+    type: "Syndicats & Ordres Professionnels",
+    examples: "Syndicats, associations professionnelles",
+    specificities: [
+      "Cotisations membres",
+      "Actions collectives",
+      "Représentation légale",
+    ],
+  },
+];
+
+const caseStudies = [
+  {
+    organization: "Fondation Éducation & Avenir",
+    type: "Fondation reconnue d'utilité publique",
+    budget: "2,5M€/an",
+    challenge:
+      "Mise en conformité reporting et optimisation gestion subventions",
+    solution:
+      "Audit complet + restructuration comptable + formation équipe + processus subventions",
+    result: "Conformité 100%, gain temps admin 40%, subventions +25%",
+  },
+  {
+    organization: "Association Solidarité Internationale",
+    type: "Association loi 1901",
+    budget: "800K€/an",
+    challenge: "Professionnalisation gestion et croissance contrôlée",
+    solution:
+      "Mise en place comptabilité analytique + budget prévisionnel + CA conseil",
+    result:
+      "Visibilité financière, croissance +60% en 3 ans, gouvernance renforcée",
+  },
+];
+
+const associationMetrics = [
+  { value: "100+", label: "Associations accompagnées" },
+  { value: "15M€", label: "Budget cumulé géré" },
+  { value: "95%", label: "Conformité légale" },
+  { value: "20 ans", label: "Expertise secteur associatif" },
+];
+
+const keyBenefits = [
+  "Tarification adaptée au budget associatif",
+  "Compréhension enjeux secteur non-lucratif",
+  "Expertise fiscalité associative et mécénat",
+  "Accompagnement gouvernance et AG",
+  "Reporting transparent pour membres et donateurs",
+  "Formation bénévoles et équipes",
+];
+
+const Organisations: React.FC = () => {
+  return (
+    <div className="pt-20">
+      <Breadcrumbs
+        items={[
+          { label: "Accueil", href: "/" },
+          { label: "Secteurs", href: "/secteurs" },
+          { label: "Associations & Organisations" },
+        ]}
+      />
+
+      <PageHero
+        icon={<Heart className="w-8 h-8 text-white" />}
+        title="Associations & Organisations"
+        subtitle="Accompagnement spécialisé des associations, fondations et organisations sans but lucratif. Nous comprenons vos enjeux de mission sociale et vos contraintes budgétaires."
+      />
+
+      {/* Metrics Section */}
+      <section className="section-padding bg-neutral-light-bg">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {associationMetrics.map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
+                  {metric.value}
+                </div>
+                <div className="text-sm text-neutral-gray">{metric.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Associations Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
+                Les Enjeux Spécifiques du Secteur Associatif
+              </h2>
+              <p className="text-neutral-gray text-lg mb-6 leading-relaxed">
+                Les associations et fondations font face à des défis uniques :
+                transparence vis-à-vis des donateurs, conformité réglementaire
+                stricte, gestion budgets limités, justification de l'usage des
+                fonds et gouvernance démocratique.
+              </p>
+              <p className="text-neutral-gray text-lg mb-6 leading-relaxed">
+                Notre expérience du secteur associatif nous permet de vous
+                accompagner avec une approche adaptée à vos contraintes
+                budgétaires et vos missions d'intérêt général.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {keyBenefits.map((benefit) => (
+                  <div key={benefit} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-neutral-dark">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl flex items-center justify-center">
+                <Heart className="w-32 h-32 text-secondary/40" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section-padding bg-neutral-light-bg">
+        <div className="container-custom">
+          <SectionHeader
+            eyebrow="Notre offre associative"
+            title="Services Dédiés aux Associations"
+            subtitle="Une approche complète pour la gestion financière et la gouvernance de votre organisation"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-card-hover transition-shadow duration-300">
+                    <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-neutral-dark mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-neutral-gray leading-relaxed">
+                      {service.description}
+                    </p>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Association Types Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <SectionHeader
+            eyebrow="Types d'organisations"
+            title="Nous Accompagnons Tous Types d'Associations"
+            subtitle="Expertise adaptée à chaque forme juridique et chaque mission"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {associationTypes.map((assocType, index) => (
+              <motion.div
+                key={assocType.type}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full bg-gradient-to-br from-white to-secondary/5">
+                  <h3 className="text-lg font-bold text-neutral-dark mb-2">
+                    {assocType.type}
+                  </h3>
+                  <p className="text-sm text-neutral-gray mb-4">
+                    {assocType.examples}
+                  </p>
+                  <div className="space-y-2">
+                    <div className="text-sm font-semibold text-secondary mb-2">
+                      Spécificités :
+                    </div>
+                    {assocType.specificities.map((spec) => (
+                      <div key={spec} className="flex items-start gap-2">
+                        <Users className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-neutral-gray">{spec}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="section-padding bg-neutral-light-bg">
+        <div className="container-custom">
+          <SectionHeader
+            eyebrow="Témoignages"
+            title="Associations qui Nous Font Confiance"
+            subtitle="Découvrez comment nous aidons des associations à se professionnaliser et se développer"
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={study.organization}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-neutral-dark mb-2">
+                      {study.organization}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 text-sm mb-2">
+                      <span className="px-3 py-1 bg-secondary/10 text-secondary font-medium rounded-full">
+                        {study.type}
+                      </span>
+                      <span className="px-3 py-1 bg-neutral-light-bg text-neutral-gray font-medium rounded-full">
+                        {study.budget}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-sm font-semibold text-secondary mb-1">
+                        Problématique
+                      </div>
+                      <p className="text-sm text-neutral-gray">
+                        {study.challenge}
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-semibold text-secondary mb-1">
+                        Solution Axys
+                      </div>
+                      <p className="text-sm text-neutral-gray">
+                        {study.solution}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-neutral-light-bg">
+                      <div className="text-sm font-semibold text-primary mb-1">
+                        ✓ Impact
+                      </div>
+                      <p className="text-sm font-semibold text-neutral-dark">
+                        {study.result}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & Approach Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              title="Une Approche Adaptée au Monde Associatif"
+              subtitle="Nous comprenons vos contraintes budgétaires et vos missions d'intérêt général"
+            />
+
+            <div className="mt-12 bg-gradient-to-br from-secondary/10 to-primary/5 rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl font-bold text-neutral-dark mb-6 text-center">
+                Tarification Spéciale Associations
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  {
+                    title: "Petites Associations",
+                    budget: "< 100K€/an",
+                    price: "À partir de 150€/mois",
+                    features: [
+                      "Comptabilité courante",
+                      "Comptes annuels",
+                      "Support téléphone",
+                    ],
+                  },
+                  {
+                    title: "Associations Moyennes",
+                    budget: "100K-500K€/an",
+                    price: "À partir de 400€/mois",
+                    features: [
+                      "Compta + analytique",
+                      "Budget prévisionnel",
+                      "Dossiers subventions",
+                      "Conseil CA",
+                    ],
+                  },
+                  {
+                    title: "Grandes Associations",
+                    budget: "> 500K€/an",
+                    price: "Sur mesure",
+                    features: [
+                      "Accompagnement complet",
+                      "Audit commissaire",
+                      "Gouvernance",
+                      "Formation équipes",
+                    ],
+                  },
+                ].map((offer) => (
+                  <Card
+                    key={offer.title}
+                    className="text-center bg-white h-full"
+                  >
+                    <h4 className="font-bold text-neutral-dark mb-2">
+                      {offer.title}
+                    </h4>
+                    <p className="text-sm text-neutral-gray mb-3">
+                      {offer.budget}
+                    </p>
+                    <div className="text-2xl font-bold text-secondary mb-4">
+                      {offer.price}
+                    </div>
+                    <ul className="space-y-2 text-sm text-neutral-gray">
+                      {offer.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0" />
+                          <span className="text-left">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                ))}
+              </div>
+              <p className="text-center text-neutral-gray text-sm">
+                * Tarifs indicatifs. Devis personnalisé selon vos besoins et
+                votre budget.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <Heart className="w-16 h-16 mx-auto mb-6 opacity-90" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Accompagnons Ensemble Votre Mission
+            </h2>
+            <p className="text-lg mb-8 opacity-90">
+              Que vous soyez une petite association ou une grande fondation,
+              nous vous aidons à professionnaliser votre gestion pour mieux
+              servir votre cause.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-secondary"
+                onClick={() => (window.location.href = "/contact")}
+              >
+                Demander un devis
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="text-white hover:bg-white/10"
+                onClick={() => (window.location.href = "/services")}
+              >
+                Nos services
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Organisations;
