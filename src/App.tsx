@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import ScrollToTopOnNavigation from "./components/ui/ScrollToTopOnNavigation";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -35,6 +36,7 @@ import "./style.css";
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTopOnNavigation />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">

@@ -199,21 +199,15 @@ const HeroSection: React.FC = () => {
           >
             {/* Main Image Container */}
             <div className="relative">
-              {/* Placeholder for hero image */}
-              <div className="aspect-square lg:aspect-[4/5] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-white font-bold text-3xl">A</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-neutral-dark mb-2">
-                      AXYS AUDIT
-                    </h3>
-                    <p className="text-neutral-gray">
-                      Excellence & Innovation
-                    </p>
-                  </div>
-                </div>
+              {/* Hero Image */}
+              <div className="aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative">
+                <img 
+                  src="/images/Accueil/hero-home.jpg" 
+                  alt="AXYS AUDIT - Excellence en Audit et Conseil"
+                  className="w-full h-full object-cover"
+                />
+                {/* Subtle overlay for better contrast with floating elements */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"></div>
               </div>
 
               {/* Floating Elements */}
