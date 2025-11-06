@@ -86,30 +86,30 @@ const caseStudies = [
   {
     organization: "Fondation Éducation & Avenir",
     type: "Fondation reconnue d'utilité publique",
-    budget: "2,5M€/an",
+    budget: "Budget important",
     challenge:
       "Mise en conformité reporting et optimisation gestion subventions",
     solution:
       "Audit complet + restructuration comptable + formation équipe + processus subventions",
-    result: "Conformité 100%, gain temps admin 40%, subventions +25%",
+    result: "Conformité assurée, gain de temps administratif significatif, augmentation des subventions",
   },
   {
     organization: "Association Solidarité Internationale",
     type: "Association loi 1901",
-    budget: "800K€/an",
+    budget: "Budget moyen",
     challenge: "Professionnalisation gestion et croissance contrôlée",
     solution:
       "Mise en place comptabilité analytique + budget prévisionnel + CA conseil",
     result:
-      "Visibilité financière, croissance +60% en 3 ans, gouvernance renforcée",
+      "Visibilité financière améliorée, forte croissance en 3 ans, gouvernance renforcée",
   },
 ];
 
 const associationMetrics = [
-  { value: "100+", label: "Associations accompagnées" },
-  { value: "15M€", label: "Budget cumulé géré" },
-  { value: "95%", label: "Conformité légale" },
-  { value: "20 ans", label: "Expertise secteur associatif" },
+  { value: "Nombreuses", label: "Associations accompagnées" },
+  { value: "Importants", label: "Budget cumulé géré" },
+  { value: "Totale", label: "Conformité légale" },
+  { value: "20+ ans", label: "Expertise secteur associatif" },
 ];
 
 const keyBenefits = [
@@ -365,8 +365,8 @@ const Organisations: React.FC = () => {
                 {[
                   {
                     title: "Petites Associations",
-                    budget: "< 100K€/an",
-                    price: "À partir de 150€/mois",
+                    budget: "Budget modeste",
+                    price: "Sur mesure",
                     features: [
                       "Comptabilité courante",
                       "Comptes annuels",
@@ -375,8 +375,8 @@ const Organisations: React.FC = () => {
                   },
                   {
                     title: "Associations Moyennes",
-                    budget: "100K-500K€/an",
-                    price: "À partir de 400€/mois",
+                    budget: "Budget moyen",
+                    price: "Sur mesure",
                     features: [
                       "Compta + analytique",
                       "Budget prévisionnel",
@@ -386,7 +386,7 @@ const Organisations: React.FC = () => {
                   },
                   {
                     title: "Grandes Associations",
-                    budget: "> 500K€/an",
+                    budget: "Budget important",
                     price: "Sur mesure",
                     features: [
                       "Accompagnement complet",
@@ -421,8 +421,7 @@ const Organisations: React.FC = () => {
                 ))}
               </div>
               <p className="text-center text-neutral-gray text-sm">
-                * Tarifs indicatifs. Devis personnalisé selon vos besoins et
-                votre budget.
+                * Solutions personnalisées adaptées à vos besoins et votre budget.
               </p>
             </div>
           </div>
@@ -449,7 +448,7 @@ const Organisations: React.FC = () => {
                 className="border-white text-white hover:bg-white hover:text-secondary"
                 onClick={() => (window.location.href = "/contact")}
               >
-                Demander un devis
+                Contactez-nous
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button

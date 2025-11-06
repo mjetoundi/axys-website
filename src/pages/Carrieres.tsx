@@ -11,7 +11,7 @@ const jobListings = [
     id: 1,
     title: "Auditeur Senior - Contrôle Interne",
     department: "Audit",
-    location: "Paris",
+    location: "Yaoundé",
     type: "CDI",
     description:
       "Nous recherchons un auditeur expérimenté pour renforcer notre équipe audit et accompagner nos clients PME et ETI dans leurs missions de contrôle interne et d'audit financier.",
@@ -22,7 +22,7 @@ const jobListings = [
     id: 2,
     title: "Expert-Comptable Confirmé",
     department: "Expertise Comptable",
-    location: "Lyon",
+    location: "Yaoundé",
     type: "CDI",
     description:
       "Expert-comptable diplômé pour gérer un portefeuille clients diversifié, encadrer une équipe de collaborateurs et développer l'activité conseil.",
@@ -44,7 +44,7 @@ const jobListings = [
     id: 4,
     title: "Conseiller Fiscal Senior",
     department: "Fiscalité",
-    location: "Paris",
+    location: "Yaoundé",
     type: "CDI",
     description:
       "Expert en fiscalité des entreprises pour conseiller nos clients sur l'optimisation fiscale, les restructurations et les opérations de croissance externe.",
@@ -66,7 +66,7 @@ const jobListings = [
     id: 6,
     title: "Collaborateur Comptable Junior",
     department: "Expertise Comptable",
-    location: "Lyon",
+    location: "Yaoundé",
     type: "CDI",
     description:
       "Jeune diplômé motivé pour rejoindre notre équipe comptable et évoluer rapidement au sein d'un cabinet dynamique avec formation continue.",

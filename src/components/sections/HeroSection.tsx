@@ -1,19 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Award, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Award, Users, TrendingUp } from 'lucide-react';
 import Button from '../ui/Button';
 
 const HeroSection: React.FC = () => {
   const keyPoints = [
-    'Expertise reconnue depuis 15+ ans',
-    'Équipe de 50+ experts certifiés',
-    'Accompagnement sur-mesure'
-  ];
-
-  const stats = [
-    { icon: Users, value: '500+', label: 'Clients accompagnés' },
-    { icon: Award, value: '15+', label: 'Années d\'expérience' },
-    { icon: TrendingUp, value: '98%', label: 'Satisfaction client' }
+    { text: 'Expertise reconnue depuis plus de 20 ans', icon: Award },
+    { text: 'Équipe pluridisciplinaire d\'experts certifiés', icon: Users },
+    { text: 'Accompagnement agile, pensé pour vos défis', icon: TrendingUp }
   ];
 
   return (
@@ -70,7 +64,7 @@ const HeroSection: React.FC = () => {
             >
               <Award size={16} className="text-primary" />
               <span className="text-sm font-semibold text-neutral-dark">
-                Cabinet certifié ISO 9001:2015
+                Cabinet d'expertise et d'audit
               </span>
             </motion.div>
 
@@ -110,8 +104,8 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Nous accompagnons les entreprises vers l'excellence opérationnelle 
-              avec notre expertise en audit, expertise comptable et conseil stratégique. 
-              Partenaire de confiance pour votre développement durable.
+              grâce à notre expertise en audit, en comptabilité et en conseil stratégique. 
+              Partenaire de confiance pour un développement durable et pérenne.
             </motion.p>
 
             {/* Key Points */}
@@ -121,18 +115,21 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              {keyPoints.map((point, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center space-x-3 justify-center lg:justify-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                >
-                  <CheckCircle size={20} className="text-primary flex-shrink-0" />
-                  <span className="text-neutral-dark font-medium">{point}</span>
-                </motion.div>
-              ))}
+              {keyPoints.map((point, index) => {
+                const IconComponent = point.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3 justify-center lg:justify-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  >
+                    <IconComponent size={20} className="text-primary flex-shrink-0" />
+                    <span className="text-neutral-dark font-medium">{point.text}</span>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             {/* CTA Buttons */}
@@ -157,36 +154,8 @@ const HeroSection: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Prendre rendez-vous
+                Contactez-nous
               </Button>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                >
-                  <div className="flex justify-center mb-2">
-                    <stat.icon size={24} className="text-primary" />
-                  </div>
-                  <div className="text-2xl font-bold text-neutral-dark mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-neutral-gray">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -217,9 +186,9 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <Award size={20} className="text-primary" />
                   <span className="text-sm font-semibold text-neutral-dark">
-                    Cabinet Certifié
+                    Plus de 20 ans d'expérience
                   </span>
                 </div>
               </motion.div>
@@ -230,9 +199,9 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <div className="flex items-center space-x-2">
-                  <TrendingUp size={20} className="text-primary" />
+                  <Users size={20} className="text-primary" />
                   <span className="text-sm font-semibold text-neutral-dark">
-                    Croissance +25%
+                    Experts certifiés
                   </span>
                 </div>
               </motion.div>

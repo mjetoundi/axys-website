@@ -14,17 +14,13 @@ import ConseilService from "./pages/services/ConseilService";
 import ExpertiseComptableService from "./pages/services/ExpertiseComptableService";
 import ExternalisationRHService from "./pages/services/ExternalisationRHService";
 import FiscaliteService from "./pages/services/FiscaliteService";
+import SystemesInformationService from "./pages/services/SystemesInformationService";
 import NotFound from "./pages/NotFound";
 import Secteurs from "./pages/Secteurs";
 import PmeEti from "./pages/secteurs/PmeEti";
 import Startups from "./pages/secteurs/Startups";
 import GrandesEntreprises from "./pages/secteurs/GrandesEntreprises";
 import Organisations from "./pages/secteurs/Organisations";
-import Ressources from "./pages/Ressources";
-import Blog from "./pages/ressources/Blog";
-import LivresBlancs from "./pages/ressources/LivresBlancs";
-import Actualites from "./pages/ressources/Actualites";
-import Telecharges from "./pages/ressources/Telecharges";
 import Carrieres from "./pages/Carrieres";
 import EspaceClient from "./pages/EspaceClient";
 import MentionsLegales from "./pages/legal/MentionsLegales";
@@ -55,6 +51,10 @@ const App: React.FC = () => {
               element={<ExternalisationRHService />}
             />
             <Route path="/services/fiscalite" element={<FiscaliteService />} />
+            <Route 
+              path="/services/systemes-information" 
+              element={<SystemesInformationService />} 
+            />
             <Route path="/contact" element={<Contact />} />
             <Route path="/secteurs" element={<Secteurs />} />
             <Route path="/secteurs/pme-eti" element={<PmeEti />} />
@@ -64,14 +64,6 @@ const App: React.FC = () => {
               element={<GrandesEntreprises />}
             />
             <Route path="/secteurs/organisations" element={<Organisations />} />
-            <Route path="/ressources" element={<Ressources />} />
-            <Route path="/ressources/blog" element={<Blog />} />
-            <Route
-              path="/ressources/livres-blancs"
-              element={<LivresBlancs />}
-            />
-            <Route path="/ressources/actualites" element={<Actualites />} />
-            <Route path="/ressources/telecharges" element={<Telecharges />} />
             <Route path="/carrieres" element={<Carrieres />} />
             <Route path="/espace-client" element={<EspaceClient />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />

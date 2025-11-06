@@ -35,7 +35,8 @@ const Navbar: React.FC = () => {
         { name: 'Conseil & Optimisation', path: '/services/conseil' },
         { name: 'Expertise Comptable', path: '/services/expertise-comptable' },
         { name: 'Externalisation RH', path: '/services/externalisation-rh' },
-        { name: 'Fiscalité & Advisory', path: '/services/fiscalite' }
+        { name: 'Fiscalité & Advisory', path: '/services/fiscalite' },
+        { name: 'Systèmes d\'Information', path: '/services/systemes-information' }
       ]
     },
     {
@@ -46,16 +47,6 @@ const Navbar: React.FC = () => {
         { name: 'Startups & Croissance', path: '/secteurs/startups' },
         { name: 'Grandes Entreprises', path: '/secteurs/grandes-entreprises' },
         { name: 'Associations & Organisations', path: '/secteurs/organisations' }
-      ]
-    },
-    {
-      name: 'Ressources',
-      path: '/ressources',
-      dropdown: [
-        { name: 'Blog', path: '/ressources/blog' },
-        { name: 'Livres Blancs', path: '/ressources/livres-blancs' },
-        { name: 'Actualités', path: '/ressources/actualites' },
-        { name: 'Téléchargements', path: '/ressources/telecharges' }
       ]
     },
     {

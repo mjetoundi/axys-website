@@ -7,10 +7,10 @@ import {
   Users, 
   FileText, 
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Server
 } from 'lucide-react';
 import Card from '../ui/Card';
-import Button from '../ui/Button';
 
 const ServicesSection: React.FC = () => {
   const services = [
@@ -78,6 +78,19 @@ const ServicesSection: React.FC = () => {
       ],
       link: '/services/fiscalite',
       color: 'text-orange-600'
+    },
+    {
+      icon: Server,
+      title: 'Systèmes d\'Information',
+      description: 'Audit et conseil en systèmes d\'information pour optimiser votre infrastructure IT et accompagner votre transformation digitale.',
+      features: [
+        'Audit IT et sécurité',
+        'Conseil en infrastructure',
+        'Transformation digitale',
+        'Outils collaboratifs'
+      ],
+      link: '/services/systemes-information',
+      color: 'text-indigo-600'
     }
   ];
 
@@ -100,7 +113,7 @@ const ServicesSection: React.FC = () => {
             viewport={{ once: true }}
           >
             <Shield size={16} />
-            <span className="text-sm font-semibold">Nos Expertises</span>
+            <span className="text-sm font-semibold">Nos solutions</span>
           </motion.div>
 
           <motion.h2
@@ -246,30 +259,6 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          className="text-center bg-white rounded-2xl p-8 md:p-12 shadow-lg"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-neutral-dark mb-4">
-            Besoin d'un accompagnement personnalisé ?
-          </h3>
-          <p className="text-lg text-neutral-gray mb-8 max-w-2xl mx-auto">
-            Nos experts analysent vos besoins et vous proposent des solutions 
-            adaptées à votre secteur d'activité et vos objectifs.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button variant="primary" size="lg" icon={ArrowRight}>
-              Demander un diagnostic gratuit
-            </Button>
-            <Button variant="outline" size="lg">
-              Voir tous nos services
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

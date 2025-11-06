@@ -68,32 +68,27 @@ const FiscaliteService: React.FC = () => {
     {
       step: '1',
       title: 'Audit Fiscal Initial',
-      description: 'Analyse complète de votre situation fiscale actuelle et identification des optimisations',
-      duration: '2-3 semaines'
+      description: 'Analyse complète de votre situation fiscale actuelle et identification des optimisations'
     },
     {
       step: '2',
       title: 'Stratégie Personnalisée',
-      description: 'Élaboration d\'une stratégie fiscale sur-mesure adaptée à vos objectifs',
-      duration: '1-2 semaines'
+      description: 'Élaboration d\'une stratégie fiscale sur-mesure adaptée à vos objectifs'
     },
     {
       step: '3',
       title: 'Mise en Œuvre',
-      description: 'Implémentation des optimisations et montages juridiques recommandés',
-      duration: '2-8 semaines'
+      description: 'Implémentation des optimisations et montages juridiques recommandés'
     },
     {
       step: '4',
       title: 'Suivi & Déclarations',
-      description: 'Gestion courante des obligations fiscales et suivi des optimisations',
-      duration: 'Ongoing'
+      description: 'Gestion courante des obligations fiscales et suivi des optimisations'
     },
     {
       step: '5',
       title: 'Pilotage Continu',
-      description: 'Veille fiscale et ajustements stratégiques en fonction des évolutions',
-      duration: 'Annuel'
+      description: 'Veille fiscale et ajustements stratégiques en fonction des évolutions'
     }
   ];
 
@@ -101,75 +96,35 @@ const FiscaliteService: React.FC = () => {
     {
       client: 'Holding Familiale',
       sector: 'Investissement',
-      size: '10M€ de patrimoine',
-      challenge: 'Optimisation fiscale transmission familiale et réduction ISF/IFI',
-      solution: 'Restructuration holding + pacte Dutreil + optimisation ISF/IFI',
-      result: 'Économie fiscale 40% + Transmission optimisée + IFI réduit de 85%'
+      size: 'Patrimoine important',
+      challenge: 'Optimisation fiscale pour transmission familiale et réduction IFI',
+      solution: 'Restructuration holding + pacte Dutreil + optimisation IFI',
+      result: 'Économie fiscale significative + Transmission optimisée + Réduction notable de l\'IFI'
     },
     {
-      client: 'Groupe Industrial',
+      client: 'Groupe Industriel',
       sector: 'Manufacturing',
-      size: '50M€ CA annuel',
+      size: 'CA important',
       challenge: 'Optimisation IS et restructuration post-acquisition internationale',
       solution: 'Intégration fiscale + crédit impôt recherche + optimisation holding',
-      result: 'Économie IS 25% + CIR optimisé +1.2M€ + Structure internationale'
+      result: 'Économie d\'IS notable + CIR optimisé + Structure internationale efficiente'
     },
     {
       client: 'Startup Tech',
       sector: 'Technologie',
-      size: 'Série A 5M€',
+      size: 'En croissance',
       challenge: 'Structuration fiscale optimale pour croissance et exit strategy',
-      solution: 'Holding JEI + optimisation carry + fiscalité internationale',
-      result: 'JEI 2 ans + Carry optimisé + Exit strategy fiscalement efficiente'
+      solution: 'Holding JEI + optimisation + fiscalité internationale',
+      result: 'Statut JEI obtenu + Structure optimisée + Exit strategy fiscalement efficiente'
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'Conseil Ponctuel',
-      price: 'À partir de 2 500 €',
-      features: [
-        'Audit fiscal ciblé',
-        'Recommandations prioritaires',
-        'Plan d\'action détaillé',
-        '2h conseil téléphonique',
-        'Suivi 3 mois'
-      ],
-      popular: false
-    },
-    {
-      name: 'Accompagnement Annuel',
-      price: 'À partir de 8 500 €',
-      features: [
-        'Audit fiscal complet',
-        'Stratégie fiscale personnalisée',
-        'Mise en œuvre accompagnée',
-        'Déclarations fiscales incluses',
-        'Veille et conseil continu',
-        'Support prioritaire'
-      ],
-      popular: true
-    },
-    {
-      name: 'Advisory Premium',
-      price: 'Sur devis',
-      features: [
-        'Directeur fiscal externe dédié',
-        'Optimisations complexes',
-        'Montages juridico-fiscaux',
-        'Fiscalité internationale',
-        'Accompagnement contentieux',
-        'Conseil board et dirigeants'
-      ],
-      popular: false
-    }
-  ];
 
   const benefits = [
     {
       icon: PiggyBank,
       title: 'Économies Substantielles',
-      description: 'Réduction moyenne de 25-40% de votre charge fiscale annuelle'
+      description: 'Réduction significative de votre charge fiscale annuelle'
     },
     {
       icon: Shield,
@@ -266,16 +221,10 @@ const FiscaliteService: React.FC = () => {
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
+                  href="/contact"
                   className="w-full sm:w-auto"
                 >
-                  Audit fiscal gratuit
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  Calculer vos économies
+                  Contactez-nous
                 </Button>
               </div>
             </motion.div>
@@ -412,24 +361,24 @@ const FiscaliteService: React.FC = () => {
               
               <div className="bg-secondary/5 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold text-neutral-dark mb-4">
-                  Résultats Moyens
+                  Résultats Attendus
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Économie IS</span>
-                    <span className="text-secondary font-bold">-30%</span>
+                    <span className="text-secondary font-bold">Réduction</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Optimisation CET</span>
-                    <span className="text-secondary font-bold">-20%</span>
+                    <span className="text-secondary font-bold">Amélioration</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Crédits d'impôt</span>
-                    <span className="text-secondary font-bold">+50%</span>
+                    <span className="text-secondary font-bold">Maximisés</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">ROI annuel</span>
-                    <span className="text-secondary font-bold">500%</span>
+                    <span className="text-secondary font-bold">Élevé</span>
                   </div>
                 </div>
               </div>
@@ -651,78 +600,13 @@ const FiscaliteService: React.FC = () => {
                   )}
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{step.description}</p>
-                <span className="text-primary text-xs font-semibold">{step.duration}</span>
+                <p className="text-gray-300 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Investissement et Retour sur Investissement
-            </h2>
-            <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Des honoraires largement compensés par vos économies fiscales
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`h-full ${plan.popular ? 'ring-2 ring-primary' : ''} relative`}>
-                  {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Le plus rentable
-                      </span>
-                    </div>
-                  )}
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-3xl font-bold text-primary mb-6">
-                      {plan.price}
-                    </p>
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-neutral-dark text-left">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      variant={plan.popular ? "primary" : "outline"} 
-                      size="lg"
-                      className="w-full"
-                    >
-                      Démarrer l'optimisation
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
@@ -739,7 +623,7 @@ const FiscaliteService: React.FC = () => {
             </h2>
             <p className="text-lg text-blue-100 leading-relaxed mb-8">
               Nos experts fiscalistes identifient immédiatement vos opportunités d'économies. 
-              Audit fiscal gratuit et sans engagement sous 48h.
+              Contactez-nous pour discuter de votre situation fiscale.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Button 
@@ -749,15 +633,7 @@ const FiscaliteService: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Audit fiscal gratuit
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                href="/contact"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
-              >
-                Simulateur d'économies
+                Contactez-nous
               </Button>
             </div>
           </motion.div>

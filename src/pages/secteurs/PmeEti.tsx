@@ -52,7 +52,7 @@ const caseStudies = [
       "Préparation levée de fonds série A pour expansion nationale",
     solution:
       "Audit complet + restructuration capitalistique + dossier investisseurs",
-    result: "Levée de 3M€ réussie, croissance CA +85% en 18 mois",
+    result: "Levée de fonds réussie, forte croissance du CA en 18 mois",
   },
   {
     company: "Industrie Verte SA",
@@ -62,7 +62,7 @@ const caseStudies = [
     solution:
       "Audit opérationnel + réorganisation processus + optimisation fiscale",
     result:
-      "Réduction coûts -22%, amélioration marge opérationnelle +15 points",
+      "Réduction notable des coûts, amélioration significative de la marge opérationnelle",
   },
   {
     company: "Services Pro Conseil",
@@ -76,10 +76,10 @@ const caseStudies = [
 ];
 
 const stats = [
-  { value: "200+", label: "PME & ETI accompagnées" },
-  { value: "45M€", label: "Levées de fonds facilitées" },
-  { value: "92%", label: "Clients satisfaits" },
-  { value: "12 ans", label: "Expérience moyenne équipe" },
+  { value: "Nombreuses", label: "PME & ETI accompagnées" },
+  { value: "Conséquentes", label: "Levées de fonds facilitées" },
+  { value: "Élevée", label: "Satisfaction clients" },
+  { value: "10+ ans", label: "Expérience moyenne équipe" },
 ];
 
 const PmeEti: React.FC = () => {

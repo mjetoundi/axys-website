@@ -5,26 +5,26 @@ import { Users, Award, TrendingUp, Clock } from 'lucide-react';
 const StatsSection: React.FC = () => {
   const stats = [
     {
+      icon: Award,
+      value: '2001',
+      label: 'Année de création',
+      description: 'Plus de 20 ans d\'expertise'
+    },
+    {
       icon: Users,
-      value: '500+',
-      label: 'Clients accompagnés',
+      value: 'Multi-secteurs',
+      label: 'Expertise diversifiée',
       description: 'TPE, PME et grands comptes'
     },
     {
-      icon: Award,
-      value: '15+',
-      label: 'Années d\'expérience',
-      description: 'Expertise reconnue'
-    },
-    {
       icon: TrendingUp,
-      value: '98%',
-      label: 'Satisfaction client',
-      description: 'Excellence confirmée'
+      value: 'CEMAC',
+      label: 'Zone d\'intervention',
+      description: 'Présence en Afrique Centrale'
     },
     {
       icon: Clock,
-      value: '24h',
+      value: '< 48h',
       label: 'Délai de réponse',
       description: 'Réactivité garantie'
     }
@@ -41,7 +41,7 @@ const StatsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Notre expertise en chiffres
+            Notre expertise
           </motion.h2>
           <motion.p
             className="text-blue-100 text-lg"
@@ -50,7 +50,7 @@ const StatsSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Des résultats concrets qui témoignent de notre engagement
+            Des valeurs qui témoignent de notre engagement
           </motion.p>
         </div>
 
@@ -67,10 +67,10 @@ const StatsSection: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-lg mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
                 <stat.icon size={32} className="text-white" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-xl font-semibold text-white mb-2">
+              <div className="text-lg font-semibold text-white mb-2">
                 {stat.label}
               </div>
               <div className="text-blue-100 text-sm">

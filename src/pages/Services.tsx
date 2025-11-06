@@ -36,9 +36,7 @@ const Services: React.FC = () => {
         'Identification des risques et opportunités',
         'Amélioration des performances',
         'Renforcement de la gouvernance'
-      ],
-      pricing: 'À partir de 2 500€',
-      duration: '2-6 semaines selon la complexité'
+      ]
     },
     {
       id: 'conseil',
@@ -59,9 +57,7 @@ const Services: React.FC = () => {
         'Réduction des coûts opérationnels',
         'Croissance accélérée et durable',
         'Avantage concurrentiel renforcé'
-      ],
-      pricing: 'À partir de 1 800€',
-      duration: '1-3 mois selon le périmètre'
+      ]
     },
     {
       id: 'expertise-comptable',
@@ -82,9 +78,7 @@ const Services: React.FC = () => {
         'Gain de temps considérable',
         'Visibilité financière en temps réel',
         'Conseil proactif personnalisé'
-      ],
-      pricing: 'À partir de 300€/mois',
-      duration: 'Accompagnement annuel'
+      ]
     },
     {
       id: 'externalisation-rh',
@@ -105,9 +99,7 @@ const Services: React.FC = () => {
         'Expertise juridique permanente',
         'Flexibilité et adaptabilité',
         'Digitalisation des processus'
-      ],
-      pricing: 'À partir de 35€/bulletin',
-      duration: 'Service mensuel récurrent'
+      ]
     },
     {
       id: 'fiscalite',
@@ -128,9 +120,7 @@ const Services: React.FC = () => {
         'Sécurisation juridique complète',
         'Accompagnement patrimonial',
         'Anticipation des évolutions légales'
-      ],
-      pricing: 'À partir de 1 500€',
-      duration: 'Mission ponctuelle ou récurrente'
+      ]
     }
   ];
 
@@ -254,18 +244,6 @@ const Services: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Pricing & Duration */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-neutral-light-bg rounded-lg p-6 mb-6">
-                    <div className="mb-4 sm:mb-0">
-                      <div className="text-sm text-neutral-gray">À partir de</div>
-                      <div className="text-2xl font-bold text-primary">{service.pricing}</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-neutral-gray">Durée</div>
-                      <div className="text-lg font-semibold text-neutral-dark">{service.duration}</div>
-                    </div>
-                  </div>
-
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button 
                       variant="primary" 
@@ -273,7 +251,7 @@ const Services: React.FC = () => {
                       icon={ArrowRight}
                       href="/contact"
                     >
-                      Demander un devis
+                      Contactez-nous
                     </Button>
                     <Button 
                       variant="outline" 

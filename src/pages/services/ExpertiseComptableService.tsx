@@ -67,102 +67,57 @@ const ExpertiseComptableService: React.FC = () => {
     {
       step: '1',
       title: 'Prise de Connaissance',
-      description: 'Analyse de votre activité, organisation comptable existante et besoins spécifiques',
-      duration: '1-2 jours'
+      description: 'Analyse de votre activité, organisation comptable existante et besoins spécifiques'
     },
     {
       step: '2',
       title: 'Paramétrage',
-      description: 'Configuration des outils, plan comptable personnalisé et procédures adaptées',
-      duration: '2-3 jours'
+      description: 'Configuration des outils, plan comptable personnalisé et procédures adaptées'
     },
     {
       step: '3',
       title: 'Reprise d\'Antériorité',
-      description: 'Reprise des données historiques et régularisation des écritures si nécessaire',
-      duration: '3-5 jours'
+      description: 'Reprise des données historiques et régularisation des écritures si nécessaire'
     },
     {
       step: '4',
       title: 'Tenue Courante',
-      description: 'Gestion mensuelle : saisie, révision, déclarations et reporting',
-      duration: 'Mensuel'
+      description: 'Gestion mensuelle : saisie, révision, déclarations et reporting'
     },
     {
       step: '5',
       title: 'Clôture Annuelle',
-      description: 'Inventaire, écritures de régularisation, comptes annuels et liasse fiscale',
-      duration: '2-4 semaines'
+      description: 'Inventaire, écritures de régularisation, comptes annuels et liasse fiscale'
     }
   ];
 
   const caseStudies = [
     {
-      client: 'TechStart Pro',
+      client: 'Entreprise Tech',
       sector: 'Services Numériques',
-      size: '15-25 collaborateurs',
+      size: 'Petite entreprise',
       challenge: 'Externalisation comptable complète pour se concentrer sur le business',
       solution: 'Expertise comptable intégrale + outils digitaux + reporting mensuel',
-      result: 'Gain temps 20h/mois + Conformité 100% + Visibilité financière temps réel'
+      result: 'Gain de temps significatif + Conformité totale + Visibilité financière en temps réel'
     },
     {
-      client: 'Manufacture Plus',
+      client: 'Société Industrielle',
       sector: 'Industrie',
-      size: '80-120 collaborateurs',
+      size: 'Entreprise moyenne',
       challenge: 'Comptabilité analytique par projet et optimisation fiscale',
       solution: 'Comptabilité analytique avancée + optimisation charges + conseil fiscal',
-      result: 'Visibilité rentabilité par projet + Économie fiscale 15% + ROI 250%'
+      result: 'Visibilité sur la rentabilité par projet + Économie fiscale notable + ROI élevé'
     },
     {
-      client: 'Commerce Expansion',
+      client: 'Commerce Local',
       sector: 'Commerce de détail',
-      size: '40-60 collaborateurs',
-      challenge: 'Multi-sites, inventaires complexes et croissance rapide',
+      size: 'Multi-sites',
+      challenge: 'Gestion multi-sites, inventaires complexes et croissance rapide',
       solution: 'Comptabilité multi-établissements + automatisation + tableaux de bord',
-      result: 'Consolidation temps réel + Automatisation 80% + Support croissance'
+      result: 'Consolidation en temps réel + Forte automatisation + Support à la croissance'
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'Essentiel TPE',
-      price: 'À partir de 150 €/mois',
-      features: [
-        'Tenue comptabilité courante',
-        'Déclarations TVA',
-        'Bilan et compte de résultat',
-        'Liasse fiscale annuelle',
-        '2 RDV conseil inclus/an'
-      ],
-      popular: false
-    },
-    {
-      name: 'Complet PME',
-      price: 'À partir de 350 €/mois',
-      features: [
-        'Expertise comptable complète',
-        'Déclarations fiscales et sociales',
-        'Reporting mensuel personnalisé',
-        'Conseils en continu',
-        'Accompagnement croissance',
-        'Outils digitaux inclus'
-      ],
-      popular: true
-    },
-    {
-      name: 'Premium Entreprise',
-      price: 'Sur devis',
-      features: [
-        'Service sur-mesure dédié',
-        'Comptabilité analytique avancée',
-        'CFO externe à temps partagé',
-        'Tableaux de bord temps réel',
-        'Support illimité',
-        'Optimisation fiscale continue'
-      ],
-      popular: false
-    }
-  ];
 
   const benefits = [
     {
@@ -226,9 +181,10 @@ const ExpertiseComptableService: React.FC = () => {
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
+                  href="/contact"
                   className="w-full sm:w-auto"
                 >
-                  Devis personnalisé
+                  Contactez-nous
                 </Button>
                 <Button 
                   variant="outline" 
@@ -563,78 +519,13 @@ const ExpertiseComptableService: React.FC = () => {
                   )}
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{step.description}</p>
-                <span className="text-primary text-xs font-semibold">{step.duration}</span>
+                <p className="text-gray-300 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Tarification Claire et Prévisible
-            </h2>
-            <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Des forfaits adaptés à votre taille d'entreprise sans surprise
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`h-full ${plan.popular ? 'ring-2 ring-primary' : ''} relative`}>
-                  {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Le plus complet
-                      </span>
-                    </div>
-                  )}
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-3xl font-bold text-primary mb-6">
-                      {plan.price}
-                    </p>
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-neutral-dark text-left">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      variant={plan.popular ? "primary" : "outline"} 
-                      size="lg"
-                      className="w-full"
-                    >
-                      Commencer maintenant
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
@@ -651,7 +542,7 @@ const ExpertiseComptableService: React.FC = () => {
             </h2>
             <p className="text-lg text-blue-100 leading-relaxed mb-8">
               Confiez votre comptabilité à nos experts et libérez votre temps 
-              pour développer votre entreprise. Devis personnalisé gratuit sous 24h.
+              pour développer votre entreprise.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Button 
@@ -661,15 +552,7 @@ const ExpertiseComptableService: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Devis gratuit 24h
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                href="/contact"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
-              >
-                Tester 1 mois gratuit
+                Contactez-nous
               </Button>
             </div>
           </motion.div>

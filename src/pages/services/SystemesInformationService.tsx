@@ -1,143 +1,153 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  TrendingUp, 
+  Server, 
   CheckCircle, 
   ArrowRight, 
-  Target,
-  Lightbulb,
-  BarChart3,
+  Shield,
+  Cloud,
+  Database,
   Clock,
   Users,
   Award,
-  Zap
+  TrendingUp,
+  Lock,
+  Settings
 } from 'lucide-react';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 
-const ConseilService: React.FC = () => {
+const SystemesInformationService: React.FC = () => {
   const breadcrumbs = [
     { label: 'Accueil', href: '/' },
     { label: 'Services', href: '/services' },
-    { label: 'Conseil & Optimisation', href: '/services/conseil' }
+    { label: 'Systèmes d\'Information', href: '/services/systemes-information' }
   ];
 
   const interventionAreas = [
     {
-      id: 'strategie',
-      title: 'Conseil Stratégique',
-      description: 'Définition et mise en œuvre de votre stratégie de croissance',
+      id: 'audit-it',
+      title: 'Audit IT & Sécurité',
+      description: 'Évaluation complète de votre infrastructure et de votre sécurité informatique',
       features: [
-        'Analyse concurrentielle approfondie',
-        'Définition vision et objectifs',
-        'Roadmap stratégique détaillée',
-        'KPIs et indicateurs de performance'
+        'Audit infrastructure IT',
+        'Analyse sécurité et vulnérabilités',
+        'Évaluation conformité RGPD',
+        'Plan de reprise d\'activité (PRA)'
       ],
-      icon: Target
+      icon: Shield
     },
     {
-      id: 'optimisation',
-      title: 'Optimisation Opérationnelle',
-      description: 'Amélioration de vos processus pour maximiser l\'efficacité',
+      id: 'conseil',
+      title: 'Conseil & Stratégie IT',
+      description: 'Accompagnement stratégique pour optimiser votre système d\'information',
       features: [
-        'Cartographie des processus',
-        'Identification des goulots d\'étranglement',
-        'Automatisation et digitalisation',
-        'Formation des équipes'
+        'Schéma directeur informatique',
+        'Architecture système',
+        'Choix solutions logicielles',
+        'Gouvernance IT'
       ],
-      icon: Zap
+      icon: Settings
     },
     {
-      id: 'financier',
-      title: 'Optimisation Financière',
-      description: 'Maximisation de votre performance financière',
+      id: 'transformation',
+      title: 'Transformation Digitale',
+      description: 'Accompagnement dans votre transition vers le numérique',
       features: [
-        'Analyse de rentabilité par activité',
-        'Optimisation fiscale légale',
-        'Gestion trésorerie et cash-flow',
-        'Préparation levées de fonds'
+        'Digitalisation des processus',
+        'Migration vers le cloud',
+        'Outils collaboratifs',
+        'Automatisation métier'
       ],
-      icon: BarChart3
+      icon: Cloud
     }
   ];
 
   const processSteps = [
     {
       step: '1',
-      title: 'Diagnostic Complet',
-      description: 'Analyse approfondie de votre situation actuelle, identification des enjeux et opportunités'
+      title: 'Diagnostic IT',
+      description: 'Analyse de votre infrastructure existante, besoins métier et enjeux de sécurité'
     },
     {
       step: '2',
-      title: 'Stratégie Sur-Mesure',
-      description: 'Développement d\'une stratégie personnalisée alignée avec vos objectifs business'
+      title: 'Recommandations',
+      description: 'Propositions d\'amélioration alignées avec vos objectifs business'
     },
     {
       step: '3',
       title: 'Plan d\'Action',
-      description: 'Définition du plan d\'action détaillé avec jalons, ressources et timeline'
+      description: 'Feuille de route détaillée avec priorisation et chiffrage des projets'
     },
     {
       step: '4',
-      title: 'Mise en Œuvre',
-      description: 'Accompagnement opérationnel pour l\'implémentation des recommandations'
+      title: 'Accompagnement',
+      description: 'Support dans la mise en œuvre et pilotage des projets IT'
     },
     {
       step: '5',
-      title: 'Suivi Performance',
-      description: 'Monitoring des résultats et ajustements en continu'
+      title: 'Suivi & Optimisation',
+      description: 'Monitoring continu et ajustements pour garantir la performance'
     }
   ];
-
-  const caseStudies = [
-    {
-      client: 'Entreprise Digitale',
-      sector: 'Services Digitaux',
-      size: 'Entreprise moyenne',
-      challenge: 'Croissance stagnante et processus inefficaces limitant l\'expansion',
-      solution: 'Restructuration opérationnelle + digitalisation + stratégie de croissance',
-      result: 'Forte croissance du CA + Amélioration significative de la productivité + Expansion internationale'
-    },
-    {
-      client: 'Industrie Locale',
-      sector: 'Manufacturing',
-      size: 'Entreprise établie',
-      challenge: 'Optimisation des coûts et amélioration de la compétitivité',
-      solution: 'Lean management + automatisation + optimisation supply chain',
-      result: 'Réduction notable des coûts + Amélioration des délais de production + Satisfaction client accrue'
-    },
-    {
-      client: 'Startup Innovante',
-      sector: 'Technologie',
-      size: 'Jeune entreprise',
-      challenge: 'Structuration pour passage à l\'échelle et levée de fonds',
-      solution: 'Structuration organisation + business model + préparation due diligence',
-      result: 'Levée de fonds réussie + Structure scalable + Forte croissance'
-    }
-  ];
-
 
   const benefits = [
     {
+      icon: Shield,
+      title: 'Sécurité Renforcée',
+      description: 'Protection de vos données et conformité aux réglementations en vigueur'
+    },
+    {
       icon: TrendingUp,
-      title: 'ROI Mesurable',
-      description: 'Retour sur investissement démontrable avec des résultats concrets et mesurables'
+      title: 'Performance Optimisée',
+      description: 'Amélioration de l\'efficacité opérationnelle et de la productivité'
     },
     {
-      icon: Target,
-      title: 'Objectifs Atteints',
-      description: 'Accompagnement structuré pour atteindre vos objectifs dans les délais impartis'
-    },
-    {
-      icon: Zap,
-      title: 'Mise en Œuvre Rapide',
-      description: 'Premiers résultats visibles dès les premières semaines d\'implémentation'
+      icon: Clock,
+      title: 'Disponibilité Maximale',
+      description: 'Systèmes fiables et réactifs pour garantir la continuité d\'activité'
     },
     {
       icon: Award,
-      title: 'Expertise Reconnue',
-      description: 'Plus de 20 ans d\'expérience et de nombreuses transformations réussies en Afrique Centrale'
+      title: 'Expertise Certifiée',
+      description: 'Consultants IT expérimentés et certifiés dans leur domaine'
+    }
+  ];
+
+  const services = [
+    {
+      category: 'Infrastructure & Réseaux',
+      items: [
+        'Audit infrastructure serveurs',
+        'Architecture réseaux',
+        'Solutions de sauvegarde',
+        'Virtualisation et cloud',
+        'Sécurité périmétrique',
+        'Plan de continuité d\'activité'
+      ]
+    },
+    {
+      category: 'Applications & Logiciels',
+      items: [
+        'Audit logiciels métier',
+        'Sélection ERP/CRM',
+        'Intégration d\'applications',
+        'Migration de données',
+        'Formation utilisateurs',
+        'Support et maintenance'
+      ]
+    },
+    {
+      category: 'Sécurité & Conformité',
+      items: [
+        'Audit de sécurité',
+        'Mise en conformité RGPD',
+        'Politique de sécurité',
+        'Sensibilisation cyber-sécurité',
+        'Tests d\'intrusion',
+        'Gestion des accès'
+      ]
     }
   ];
 
@@ -155,30 +165,31 @@ const ConseilService: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-white" />
+                <Server className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-                Conseil & Optimisation
+                Systèmes d'Information
               </h1>
               <p className="text-xl text-gray-support mb-8 leading-relaxed">
-                Stratégies sur-mesure pour votre croissance. Nous développons des solutions 
-                personnalisées pour optimiser performances, réduire coûts et accélérer votre développement.
+                Audit, conseil et accompagnement IT. Optimisez votre infrastructure informatique 
+                et accélérez votre transformation digitale en toute sécurité.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
+                  href="/contact"
                   className="w-full sm:w-auto"
                 >
-                  Diagnostic gratuit
+                  Contactez-nous
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  Nos success stories
+                  Nos expertises IT
                 </Button>
               </div>
             </motion.div>
@@ -191,9 +202,9 @@ const ConseilService: React.FC = () => {
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-2xl flex items-center justify-center">
                 <div className="text-center text-white">
-                  <Lightbulb className="w-24 h-24 mx-auto mb-4 opacity-80" />
-                  <p className="text-lg font-semibold">Conseil Stratégique</p>
-                  <p className="text-blue-200">Innovation & Performance</p>
+                  <Database className="w-24 h-24 mx-auto mb-4 opacity-80" />
+                  <p className="text-lg font-semibold">Systèmes d'Information</p>
+                  <p className="text-blue-200">Sécurité & Performance</p>
                 </div>
               </div>
             </motion.div>
@@ -212,10 +223,10 @@ const ConseilService: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Pourquoi Choisir Notre Expertise Conseil ?
+              Pourquoi Optimiser Vos Systèmes d'Information ?
             </h2>
             <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Des résultats concrets et mesurables pour transformer votre entreprise
+              Des bénéfices concrets pour votre organisation et votre performance
             </p>
           </motion.div>
 
@@ -256,48 +267,87 @@ const ConseilService: React.FC = () => {
               className="lg:col-span-2"
             >
               <h2 className="text-3xl font-bold text-neutral-dark mb-6">
-                Conseil & Optimisation : Votre Partenaire de Transformation
+                Conseil en Systèmes d'Information : Votre Partenaire IT
               </h2>
               
               <div className="prose prose-lg text-neutral-dark space-y-6">
                 <p>
-                  Le conseil et l'optimisation d'entreprise représentent bien plus qu'une 
-                  simple analyse : c'est une transformation profonde de votre organisation 
-                  pour libérer son potentiel de croissance et d'efficacité.
+                  Dans un monde de plus en plus digitalisé, vos systèmes d'information 
+                  constituent l'épine dorsale de votre organisation. Notre expertise IT 
+                  vous aide à sécuriser, optimiser et faire évoluer votre infrastructure 
+                  pour soutenir votre croissance.
                 </p>
                 
                 <p>
-                  Notre approche holistique couvre trois dimensions essentielles :
+                  Notre accompagnement couvre trois dimensions clés :
                 </p>
                 
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span><strong>Stratégique :</strong> Définition de votre vision et roadmap de croissance alignée sur le marché</span>
+                    <span><strong>Audit et diagnostic :</strong> Évaluation complète de votre infrastructure IT et identification des axes d'amélioration</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span><strong>Opérationnelle :</strong> Optimisation de vos processus et organisation pour maximiser l'efficacité</span>
+                    <span><strong>Conseil stratégique :</strong> Définition de votre schéma directeur IT aligné avec vos objectifs business</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span><strong>Financière :</strong> Amélioration de votre performance économique et préparation à la croissance</span>
+                    <span><strong>Accompagnement projet :</strong> Support dans la mise en œuvre de vos projets de transformation digitale</span>
                   </li>
                 </ul>
                 
                 <p>
-                  Avec plus de 20 ans d'expérience en Afrique Centrale, 
-                  nous maîtrisons les défis spécifiques de chaque secteur et taille d'entreprise. 
-                  Notre méthodologie éprouvée garantit des résultats mesurables et durables.
+                  Nos consultants IT certifiés vous apportent une vision externe objective 
+                  et une expertise pointue pour prendre les bonnes décisions technologiques 
+                  et sécuriser vos investissements IT.
                 </p>
               </div>
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary/5 rounded-2xl p-6 mb-6">
+                <h3 className="text-xl font-semibold text-neutral-dark mb-4">
+                  Domaines d'Expertise
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">Infrastructure & Cloud</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">Cyber-sécurité</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">ERP & Applications métier</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">Transformation digitale</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">Conformité RGPD</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-neutral-dark">Gouvernance IT</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Intervention Areas */}
+      {/* Services Inclus */}
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
@@ -308,10 +358,58 @@ const ConseilService: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Nos Domaines d'Expertise
+              Nos Services IT
             </h2>
             <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Une approche complète pour transformer chaque aspect de votre entreprise
+              Une offre complète pour tous vos besoins en systèmes d'information
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full">
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-neutral-dark mb-4">
+                      {service.category}
+                    </h3>
+                    <ul className="space-y-3">
+                      {service.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start space-x-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-neutral-dark">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intervention Areas */}
+      <section className="section-padding bg-gray-light">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
+              Nos Domaines d'Intervention
+            </h2>
+            <p className="text-lg text-gray-support max-w-3xl mx-auto">
+              Expertise complète pour optimiser votre système d'information
             </p>
           </motion.div>
 
@@ -351,80 +449,6 @@ const ConseilService: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="section-padding bg-gray-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Transformations Réussies
-            </h2>
-            <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Découvrez comment notre expertise conseil a propulsé nos clients
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full">
-                  <div className="p-6">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <span className="text-primary font-semibold text-sm">
-                          {study.client.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-neutral-dark">{study.client}</h3>
-                        <p className="text-sm text-gray-support">{study.sector} • {study.size}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4 text-sm">
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Challenge:</h4>
-                        <p className="text-gray-support">{study.challenge}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Solution:</h4>
-                        <p className="text-gray-support">{study.solution}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Résultat:</h4>
-                        <p className="text-primary font-semibold">{study.result}</p>
-                      </div>
-                    </div>
-                    
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      icon={ArrowRight}
-                      className="mt-4 w-full"
-                    >
-                      Lire le cas complet
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Process Steps */}
       <section className="section-padding bg-neutral-dark text-white">
         <div className="container-custom">
@@ -436,10 +460,10 @@ const ConseilService: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Notre Méthodologie Conseil
+              Notre Méthodologie
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Un processus structuré en 5 étapes pour maximiser l'impact de nos recommandations
+              Une approche structurée pour optimiser vos systèmes d'information
             </p>
           </motion.div>
 
@@ -469,7 +493,6 @@ const ConseilService: React.FC = () => {
         </div>
       </section>
 
-
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
         <div className="container-custom">
@@ -481,11 +504,11 @@ const ConseilService: React.FC = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Prêt à Transformer Votre Entreprise ?
+              Prêt à Optimiser Votre IT ?
             </h2>
             <p className="text-lg text-blue-100 leading-relaxed mb-8">
-              Nos experts analysent votre situation et identifient 
-              vos principales opportunités d'amélioration. Démarrez votre transformation dès aujourd'hui.
+              Nos experts IT analysent vos besoins et vous proposent 
+              une stratégie sur-mesure pour votre transformation digitale.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Button 
@@ -505,4 +528,5 @@ const ConseilService: React.FC = () => {
   );
 };
 
-export default ConseilService;
+export default SystemesInformationService;
+

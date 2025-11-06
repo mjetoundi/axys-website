@@ -47,34 +47,31 @@ const caseStudies = [
   {
     company: "FinTech Innovations",
     stage: "Série A",
-    raised: "2,5M€",
-    challenge: "Structuration financière pour levée série A",
+    challenge: "Structuration financière pour levée de fonds",
     solution: "Due diligence + modèle financier + dossier investisseurs",
-    result: "Levée 2,5M€ en 4 mois, valorisation 12M€",
+    result: "Levée de fonds réussie, structuration optimale",
   },
   {
     company: "HealthTech Solutions",
     stage: "Seed",
-    raised: "800K€",
     challenge: "Optimisation fiscale et gestion trésorerie",
-    solution: "Statut JEI + CIR + prévisionnel trésorerie 24 mois",
-    result: "Économies fiscales 120K€/an, runway +8 mois",
+    solution: "Statut JEI + CIR + prévisionnel trésorerie",
+    result: "Optimisation fiscale, runway significativement allongé",
   },
   {
     company: "SaaS Pro Platform",
     stage: "Croissance",
-    raised: "5M€",
     challenge: "Reporting investisseurs et pilotage croissance",
     solution: "Dashboard temps réel + KPIs SaaS + reporting mensuel",
-    result: "Visibilité parfaite, confiance board, croissance +140%",
+    result: "Visibilité parfaite, confiance board, forte croissance",
   },
 ];
 
 const startupMetrics = [
-  { value: "75+", label: "Startups accompagnées" },
-  { value: "45M€", label: "Levées facilitées" },
-  { value: "85%", label: "Taux de succès levées" },
-  { value: "18 mois", label: "Runway moyen optimisé" },
+  { value: "Nombreuses", label: "Startups accompagnées" },
+  { value: "Réussies", label: "Levées facilitées" },
+  { value: "Excellent", label: "Taux de succès" },
+  { value: "Optimisé", label: "Runway moyen" },
 ];
 
 const keyBenefits = [
@@ -242,9 +239,6 @@ const Startups: React.FC = () => {
                       <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">
                         {study.stage}
                       </span>
-                    </div>
-                    <div className="text-2xl font-bold text-secondary">
-                      {study.raised}
                     </div>
                   </div>
 

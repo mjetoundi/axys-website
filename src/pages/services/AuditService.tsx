@@ -66,99 +66,57 @@ const AuditService: React.FC = () => {
     {
       step: '1',
       title: 'Compréhension & Planning',
-      description: 'Rencontre exploratoire avec stakeholders, définition du scope d\'audit et planification détaillée',
-      duration: '1-2 jours'
+      description: 'Rencontre exploratoire avec stakeholders, définition du scope d\'audit et planification détaillée'
     },
     {
       step: '2',
       title: 'Collecte d\'Informations',
-      description: 'Audit sur site et documentaire, interviews processus clés, analyse données financières',
-      duration: '3-10 jours'
+      description: 'Audit sur site et documentaire, interviews processus clés, analyse données financières'
     },
     {
       step: '3',
       title: 'Analyse & Diagnostic',
-      description: 'Identification dysfonctionnements, évaluation risques, synthèse findings',
-      duration: '5-7 jours'
+      description: 'Identification dysfonctionnements, évaluation risques, synthèse findings'
     },
     {
       step: '4',
       title: 'Recommandations',
-      description: 'Rapport d\'audit détaillé, propositions d\'amélioration, plan action priorisé',
-      duration: '2-3 jours'
+      description: 'Rapport d\'audit détaillé, propositions d\'amélioration, plan action priorisé'
     },
     {
       step: '5',
       title: 'Suivi & Implémentation',
-      description: 'Accompagnement mise en place, suivi des recommandations, reporting de progression',
-      duration: '1-3 mois'
+      description: 'Accompagnement mise en place, suivi des recommandations, reporting de progression'
     }
   ];
 
   const caseStudies = [
     {
-      client: 'TechCorp France',
-      sector: 'Technologie SaaS',
-      size: '50-100 collaborateurs',
-      challenge: 'Audit complet avant levée de fonds, conformité fiabilité données financières',
-      solution: 'Audit financier spécifique PME tech + reporting investisseurs',
-      result: 'Levée de fonds réussie + Optimisation comptable + 30%'
+      client: 'Entreprise Tech',
+      sector: 'Technologie',
+      size: 'PME en croissance',
+      challenge: 'Audit complet avant levée de fonds, conformité et fiabilité des données financières',
+      solution: 'Audit financier adapté aux PME tech + reporting investisseurs',
+      result: 'Levée de fonds réussie + Optimisation comptable significative'
     },
     {
-      client: 'InnovatePlus',
+      client: 'Société Industrielle',
       sector: 'Manufacturing',
-      size: '200-500 collaborateurs',
-      challenge: 'Optimisation processus opérationnels et réduction des coûts',
+      size: 'Entreprise moyenne',
+      challenge: 'Optimisation des processus opérationnels et maîtrise des coûts',
       solution: 'Audit opérationnel complet + recommandations d\'amélioration',
-      result: 'Réduction coûts 25% + Amélioration productivité 40%'
+      result: 'Réduction notable des coûts + Amélioration de la productivité'
     },
     {
-      client: 'GrowthStart',
+      client: 'Commerce en ligne',
       sector: 'E-commerce',
-      size: '20-50 collaborateurs',
+      size: 'Startup',
       challenge: 'Mise en conformité RGPD et audit sécurité des données',
-      solution: 'Audit conformité + formation équipe + procédures',
-      result: 'Conformité 100% + Certification + Confiance clients renforcée'
+      solution: 'Audit conformité + formation équipe + mise en place de procédures',
+      result: 'Conformité assurée + Certification obtenue + Confiance clients renforcée'
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'PME & Startups',
-      price: 'À partir de 5 000 €',
-      features: [
-        'Audit financier 1-2 jours',
-        'Rapport détaillé',
-        'Recommandations prioritaires',
-        'Suivi 3 mois inclus'
-      ],
-      popular: false
-    },
-    {
-      name: 'Entreprises Moyennes',
-      price: 'À partir de 12 000 €',
-      features: [
-        'Audit complet 5-10 jours',
-        'Rapport détaillé + présentation',
-        'Plan d\'action personnalisé',
-        'Suivi 6 mois inclus',
-        'Formation équipe'
-      ],
-      popular: true
-    },
-    {
-      name: 'Grandes Entreprises',
-      price: 'Sur devis',
-      features: [
-        'Audit sur-mesure multi-sites',
-        'Équipe d\'experts dédiée',
-        'Rapport exécutif + opérationnel',
-        'Accompagnement 12 mois',
-        'Formation & workshops'
-      ],
-      popular: false
-    }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -188,9 +146,10 @@ const AuditService: React.FC = () => {
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
+                  href="/contact"
                   className="w-full sm:w-auto"
                 >
-                  Demander un devis
+                  Contactez-nous
                 </Button>
                 <Button 
                   variant="outline" 
@@ -469,78 +428,13 @@ const AuditService: React.FC = () => {
                   )}
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{step.description}</p>
-                <span className="text-primary text-xs font-semibold">{step.duration}</span>
+                <p className="text-gray-300 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Tarification Transparente
-            </h2>
-            <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Coûts adaptés à votre taille et complexité
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`h-full ${plan.popular ? 'ring-2 ring-primary' : ''} relative`}>
-                  {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Le plus populaire
-                      </span>
-                    </div>
-                  )}
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-3xl font-bold text-primary mb-6">
-                      {plan.price}
-                    </p>
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-neutral-dark text-left">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      variant={plan.popular ? "primary" : "outline"} 
-                      size="lg"
-                      className="w-full"
-                    >
-                      Demander un devis
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
@@ -556,7 +450,7 @@ const AuditService: React.FC = () => {
               Prêt à Sécuriser votre Audit ?
             </h2>
             <p className="text-lg text-blue-100 leading-relaxed mb-8">
-              Nos experts analysent gratuitement vos besoins et vous proposent 
+              Nos experts analysent vos besoins et vous proposent 
               une solution d'audit personnalisée. Contactez-nous dès aujourd'hui.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -567,15 +461,7 @@ const AuditService: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Audit gratuit de faisabilité
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                href="/ressources/telecharges"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
-              >
-                Télécharger notre guide audit
+                Contactez-nous
               </Button>
             </div>
           </motion.div>

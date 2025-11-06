@@ -19,14 +19,15 @@ const Footer: React.FC = () => {
     { name: "Audit & Contrôle", path: "/services/audit" },
     { name: "Conseil & Optimisation", path: "/services/conseil" },
     { name: "Expertise Comptable", path: "/services/expertise-comptable" },
+    { name: "Externalisation RH", path: "/services/externalisation-rh" },
     { name: "Fiscalité & Advisory", path: "/services/fiscalite" },
+    { name: "Systèmes d'Information", path: "/services/systemes-information" },
   ];
 
   const quickLinks = [
     { name: "À propos", path: "/a-propos" },
     { name: "Secteurs d'activité", path: "/secteurs" },
     { name: "Carrières", path: "/carrieres" },
-    { name: "Blog", path: "/ressources/blog" },
   ];
 
   const legalLinks = [
@@ -94,32 +95,36 @@ const Footer: React.FC = () => {
             </Link>
 
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Cabinet d'expertise comptable et d'audit de premier plan, nous
-              accompagnons nos clients vers l'excellence opérationnelle et la
-              croissance durable.
+              Cabinet créé en 2001 par des professionnels formés dans des grandes firmes 
+              internationales d'audit. Nous accompagnons nos clients vers l'excellence 
+              opérationnelle et la croissance durable.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary" />
-                <span className="text-gray-300">+33 1 42 86 XX XX</span>
+                <span className="text-gray-300">+237 699 95 18 18</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone size={18} className="text-primary" />
+                <span className="text-gray-300">+237 222 21 09 41</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary" />
-                <span className="text-gray-300">contact@axysaudit.fr</span>
+                <span className="text-gray-300">axysaudit@axysaudit.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-primary mt-1" />
                 <span className="text-gray-300">
-                  123 Avenue des Champs-Élysées
+                  BP 6137
                   <br />
-                  75008 Paris, France
+                  Yaoundé, Cameroun
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock size={18} className="text-primary" />
-                <span className="text-gray-300">Lun-Ven: 9h-18h</span>
+                <span className="text-gray-300">Lun-Ven: 8h-17h</span>
               </div>
             </div>
 
@@ -231,11 +236,11 @@ const Footer: React.FC = () => {
 
             {/* Certifications */}
             <div className="bg-gray-800 rounded-lg p-4">
-              <h5 className="font-semibold mb-2 text-sm">Certifications</h5>
-              <div className="text-xs text-gray-400 space-y-1">
-                <div>• Ordre des Experts-Comptables</div>
-                <div>• CNCC (Compagnie Nationale)</div>
-                <div>• ISO 9001:2015</div>
+              <h5 className="font-semibold mb-2 text-sm">Agréments & Affiliations</h5>
+              <div className="text-xs text-gray-400 space-y-2">
+                <div>• Membre ONECCA n° SEC 023</div>
+                <div>• Agrément CEMAC n° SEC 042</div>
+                <div>• Agrément COSUMAF-CAC-01/2023</div>
               </div>
             </div>
           </motion.div>

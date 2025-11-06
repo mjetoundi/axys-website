@@ -81,7 +81,7 @@ const caseStudies = [
     challenge: "Harmonisation comptable et consolidation groupe",
     solution:
       "Audit consolidé IFRS + harmonisation référentiel + formation équipes locales",
-    result: "Délai consolidation réduit 45%, conformité IFRS 100%",
+    result: "Délai de consolidation significativement réduit, conformité IFRS totale",
   },
   {
     company: "Leader Distribution France",
@@ -90,15 +90,15 @@ const caseStudies = [
     challenge: "Transformation digitale et optimisation supply chain",
     solution:
       "Audit processus + roadmap transformation + pilotage projet 18 mois",
-    result: "Gains efficacité +30%, ROI digital 250% sur 2 ans",
+    result: "Gains d'efficacité notable, ROI digital élevé sur 2 ans",
   },
 ];
 
 const enterpriseMetrics = [
-  { value: "50+", label: "Grands comptes accompagnés" },
-  { value: "25 pays", label: "Présence internationale" },
-  { value: "€2Mds", label: "Chiffre d'affaires audité" },
-  { value: "100%", label: "Conformité réglementaire" },
+  { value: "Nombreux", label: "Grands comptes accompagnés" },
+  { value: "Multi-pays", label: "Présence internationale" },
+  { value: "Important", label: "Chiffre d'affaires audité" },
+  { value: "Totale", label: "Conformité réglementaire" },
 ];
 
 const GrandesEntreprises: React.FC = () => {

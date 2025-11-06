@@ -49,39 +49,38 @@ const Secteurs: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {sectors.map((s) => (
-              <Card key={s.title} className="h-full group">
-                <div className="flex items-start space-x-4">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                    <s.icon
-                      size={28}
-                      className="text-primary group-hover:text-white"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                      {s.title}
-                    </h3>
-                    <p className="text-neutral-gray mb-4">{s.description}</p>
-                    <div className="flex items-center justify-between">
-                      <Link
-                        to={s.link}
-                        className="text-primary font-semibold group-hover:text-blue-600"
-                      >
-                        En savoir plus
-                      </Link>
-                      <ArrowRight
-                        size={18}
-                        className="text-primary group-hover:translate-x-1 transition-transform duration-300"
+              <Link key={s.title} to={s.link} className="block h-full">
+                <Card className="h-full group cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                      <s.icon
+                        size={28}
+                        className="text-primary group-hover:text-white transition-colors duration-300"
                       />
                     </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-neutral-dark mb-2 group-hover:text-primary transition-colors duration-300">
+                        {s.title}
+                      </h3>
+                      <p className="text-neutral-gray mb-4">{s.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-primary font-semibold group-hover:text-blue-600 transition-colors duration-300">
+                          En savoir plus
+                        </span>
+                        <ArrowRight
+                          size={18}
+                          className="text-primary group-hover:translate-x-1 transition-transform duration-300"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             ))}
           </div>
 
           <div className="text-center">
-            <Button variant="primary" size="lg" icon={ArrowRight}>
+            <Button variant="primary" size="lg" icon={ArrowRight} href="/contact">
               Parler à un expert secteur
             </Button>
           </div>

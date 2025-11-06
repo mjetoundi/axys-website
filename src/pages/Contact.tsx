@@ -1,107 +1,171 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
   Send,
   User,
   Building,
   MessageSquare,
   Calendar,
   ArrowRight,
-  CheckCircle
-} from 'lucide-react';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    subject: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsSubmitting(true);
+    setSubmitError(false);
+
+    try {
+      // Construction du corps de l'email
+      const emailBody = `
+Nouveau message de contact depuis le site AXYS AUDIT
+
+═══════════════════════════════════════
+INFORMATIONS DU CONTACT
+═══════════════════════════════════════
+
+Nom complet: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Téléphone: ${formData.phone || "Non renseigné"}
+Entreprise: ${formData.company || "Non renseignée"}
+Service concerné: ${formData.service || "Non spécifié"}
+
+═══════════════════════════════════════
+SUJET
+═══════════════════════════════════════
+
+${formData.subject}
+
+═══════════════════════════════════════
+MESSAGE
+═══════════════════════════════════════
+
+${formData.message}
+
+═══════════════════════════════════════
+`;
+
+      const response = await fetch("https://formspree.io/f/xovpgkdr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `[AXYS Contact] ${formData.subject}`,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setSubmitError(true);
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Téléphone',
-      details: ['+33 1 42 86 XX XX', 'Lun-Ven : 9h-18h'],
-      action: 'Appelez-nous directement'
+      title: "Téléphone",
+      details: ["+237 699 95 18 18", "+237 222 21 09 41"],
+      action: "Appelez-nous directement",
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: ['contact@axysaudit.fr', 'Réponse sous 24h'],
-      action: 'Envoyez-nous un message'
+      title: "Email",
+      details: ["axysaudit@axysaudit.com", "Réponse sous 24h"],
+      action: "Envoyez-nous un message",
     },
     {
       icon: MapPin,
-      title: 'Adresse',
-      details: ['123 Avenue des Champs-Élysées', '75008 Paris, France'],
-      action: 'Venez nous rencontrer'
+      title: "Adresse",
+      details: ["BP 6137", "Yaoundé, Cameroun"],
+      action: "Venez nous rencontrer",
     },
     {
-      icon: Calendar,
-      title: 'Rendez-vous',
-      details: ['Consultation gratuite', 'En ligne ou sur site'],
-      action: 'Planifiez un entretien'
-    }
+      icon: Clock,
+      title: "Horaires",
+      details: ["Lun-Ven : 8h-17h", "Sur rendez-vous"],
+      action: "Nos horaires d'ouverture",
+    },
   ];
 
   const offices = [
     {
-      name: 'Siège Social - Paris',
-      address: '123 Avenue des Champs-Élysées\n75008 Paris',
-      phone: '+33 1 42 86 XX XX',
-      email: 'paris@axysaudit.fr',
-      hours: 'Lun-Ven : 9h-18h'
+      name: "Siège Social - Yaoundé",
+      address: "BP 6137\nYaoundé, Cameroun",
+      phone: "+237 699 95 18 18",
+      email: "axysaudit@axysaudit.com",
+      hours: "Lun-Ven : 8h-17h",
     },
-    {
-      name: 'Agence Lyon',
-      address: '45 Rue de la République\n69002 Lyon',
-      phone: '+33 4 78 XX XX XX',
-      email: 'lyon@axysaudit.fr',
-      hours: 'Lun-Ven : 9h-17h30'
-    },
-    {
-      name: 'Bureau Lille',
-      address: '12 Place du Général de Gaulle\n59000 Lille',
-      phone: '+33 3 20 XX XX XX',
-      email: 'lille@axysaudit.fr',
-      hours: 'Mar-Sam : 9h-17h'
-    }
   ];
 
   const services = [
-    'Audit & Contrôle',
-    'Conseil & Optimisation',
-    'Expertise Comptable',
-    'Externalisation RH',
-    'Fiscalité & Advisory',
-    'Autre / Je ne sais pas'
+    "Audit & Contrôle",
+    "Conseil & Optimisation",
+    "Expertise Comptable",
+    "Externalisation RH",
+    "Fiscalité & Advisory",
+    "Systèmes d'Information",
+    "Autre / Je ne sais pas",
   ];
 
   return (
@@ -119,8 +183,9 @@ const Contact: React.FC = () => {
               Contactez <span className="text-gradient">AXYS AUDIT</span>
             </h1>
             <p className="text-lg text-neutral-gray leading-relaxed mb-8">
-              Nos experts sont à votre disposition pour analyser vos besoins et vous proposer 
-              des solutions personnalisées. Échangeons sur vos projets !
+              Nos experts sont à votre disposition pour analyser vos besoins et
+              vous proposer des solutions personnalisées. Échangeons sur vos
+              projets !
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
@@ -129,7 +194,9 @@ const Contact: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
                 <CheckCircle size={16} className="text-secondary" />
-                <span className="text-sm font-semibold">Diagnostic gratuit</span>
+                <span className="text-sm font-semibold">
+                  Diagnostic gratuit
+                </span>
               </div>
             </div>
           </motion.div>
@@ -150,7 +217,8 @@ const Contact: React.FC = () => {
               Comment nous contacter
             </h2>
             <p className="text-lg text-neutral-gray max-w-3xl mx-auto">
-              Plusieurs moyens de nous joindre selon vos préférences et la nature de votre demande.
+              Plusieurs moyens de nous joindre selon vos préférences et la
+              nature de votre demande.
             </p>
           </motion.div>
 
@@ -172,7 +240,14 @@ const Contact: React.FC = () => {
                   </h3>
                   <div className="space-y-1 mb-4">
                     {info.details.map((detail, dIndex) => (
-                      <p key={dIndex} className={dIndex === 0 ? 'text-neutral-dark font-semibold' : 'text-neutral-gray text-sm'}>
+                      <p
+                        key={dIndex}
+                        className={
+                          dIndex === 0
+                            ? "text-neutral-dark font-semibold"
+                            : "text-neutral-gray text-sm"
+                        }
+                      >
                         {detail}
                       </p>
                     ))}
@@ -202,7 +277,7 @@ const Contact: React.FC = () => {
                 <h3 className="text-2xl font-bold text-neutral-dark mb-6">
                   Envoyez-nous un message
                 </h3>
-                
+
                 {isSubmitted ? (
                   <motion.div
                     className="text-center py-12"
@@ -210,9 +285,41 @@ const Contact: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold text-neutral-dark mb-2">Message envoyé !</h4>
-                    <p className="text-neutral-gray">Nous vous répondrons dans les plus brefs délais.</p>
+                    <CheckCircle
+                      size={64}
+                      className="text-green-500 mx-auto mb-4"
+                    />
+                    <h4 className="text-xl font-semibold text-neutral-dark mb-2">
+                      Message envoyé !
+                    </h4>
+                    <p className="text-neutral-gray">
+                      Nous vous répondrons sous 24h.
+                    </p>
+                  </motion.div>
+                ) : submitError ? (
+                  <motion.div
+                    className="text-center py-12"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <AlertCircle
+                      size={64}
+                      className="text-red-500 mx-auto mb-4"
+                    />
+                    <h4 className="text-xl font-semibold text-neutral-dark mb-2">
+                      Erreur d'envoi
+                    </h4>
+                    <p className="text-neutral-gray mb-4">
+                      Une erreur est survenue. Veuillez réessayer ou nous
+                      contacter directement par téléphone ou email.
+                    </p>
+                    <button
+                      onClick={() => setSubmitError(false)}
+                      className="text-primary font-semibold hover:underline"
+                    >
+                      Réessayer
+                    </button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -298,7 +405,9 @@ const Contact: React.FC = () => {
                       >
                         <option value="">Sélectionnez un service</option>
                         {services.map((service, index) => (
-                          <option key={index} value={service}>{service}</option>
+                          <option key={index} value={service}>
+                            {service}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -334,18 +443,29 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="text-sm text-neutral-gray">
-                      * Champs obligatoires. Vos données sont traitées conformément à notre 
-                      <a href="/politique-confidentialite" className="text-primary hover:underline"> politique de confidentialité</a>.
+                      * Champs obligatoires. Vos données sont traitées
+                      conformément à notre
+                      <a
+                        href="/politique-confidentialite"
+                        className="text-primary hover:underline"
+                      >
+                        {" "}
+                        politique de confidentialité
+                      </a>
+                      .
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      variant="primary" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      size="lg"
                       icon={Send}
                       className="w-full"
+                      disabled={isSubmitting}
                     >
-                      Envoyer le message
+                      {isSubmitting
+                        ? "Envoi en cours..."
+                        : "Envoyer le message"}
                     </Button>
                   </form>
                 )}
@@ -363,7 +483,7 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold text-neutral-dark mb-6">
                 Nos bureaux
               </h3>
-              
+
               {offices.map((office, index) => (
                 <Card key={index} className="p-6">
                   <h4 className="text-xl font-semibold text-neutral-dark mb-4">
@@ -371,14 +491,19 @@ const Contact: React.FC = () => {
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
-                      <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
+                      <MapPin
+                        size={18}
+                        className="text-primary mt-1 flex-shrink-0"
+                      />
                       <div className="whitespace-pre-line text-neutral-gray">
                         {office.address}
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Phone size={18} className="text-primary flex-shrink-0" />
-                      <span className="text-neutral-dark font-semibold">{office.phone}</span>
+                      <span className="text-neutral-dark font-semibold">
+                        {office.phone}
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Mail size={18} className="text-primary flex-shrink-0" />
@@ -392,21 +517,6 @@ const Contact: React.FC = () => {
                 </Card>
               ))}
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="bg-white">
-        <div className="h-96 bg-neutral-light-bg flex items-center justify-center">
-          <div className="text-center">
-            <MapPin size={48} className="text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-              Plan interactif disponible
-            </h3>
-            <p className="text-neutral-gray">
-              Localisation de nos bureaux sur Google Maps
-            </p>
           </div>
         </div>
       </section>
@@ -425,27 +535,33 @@ const Contact: React.FC = () => {
               Besoin d'une réponse immédiate ?
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed mb-8">
-              Nos experts sont disponibles pour répondre à vos questions 
-              et vous orienter vers la meilleure solution.
+              Nos experts sont disponibles pour répondre à vos questions et vous
+              orienter vers la meilleure solution.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button 
-                variant="primary" 
-                size="lg" 
-                icon={Phone}
+              <a href="tel:+237699951818" className="w-full sm:w-auto">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={Phone}
+                  className="w-full"
+                >
+                  +237 699 95 18 18
+                </Button>
+              </a>
+              <a
+                href="mailto:axysaudit@axysaudit.com?subject=Demande de rendez-vous&body=Bonjour,%0D%0A%0D%0AJe souhaite prendre rendez-vous avec un expert AXYS AUDIT.%0D%0A%0D%0AMes disponibilités :%0D%0A%0D%0ACordialement,"
                 className="w-full sm:w-auto"
               >
-                +33 1 42 86 XX XX
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                icon={Calendar}
-                href="/contact"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-neutral-dark"
-              >
-                Prendre rendez-vous
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  icon={Calendar}
+                  className="w-full border-white text-white hover:bg-white hover:text-neutral-dark"
+                >
+                  Prendre rendez-vous
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>

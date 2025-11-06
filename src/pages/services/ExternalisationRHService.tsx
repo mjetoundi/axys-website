@@ -67,102 +67,57 @@ const ExternalisationRHService: React.FC = () => {
     {
       step: '1',
       title: 'Audit Existant',
-      description: 'Analyse de votre organisation RH actuelle, processus et niveau de conformité',
-      duration: '1-2 semaines'
+      description: 'Analyse de votre organisation RH actuelle, processus et niveau de conformité'
     },
     {
       step: '2',
       title: 'Transfert Sécurisé',
-      description: 'Migration des données RH, paramétrage outils et formation équipes',
-      duration: '2-3 semaines'
+      description: 'Migration des données RH, paramétrage outils et formation équipes'
     },
     {
       step: '3',
       title: 'Gestion Courante',
-      description: 'Prise en charge complète de l\'administration RH et paie mensuelle',
-      duration: 'Mensuel'
+      description: 'Prise en charge complète de l\'administration RH et paie mensuelle'
     },
     {
       step: '4',
       title: 'Conseil & Optimisation',
-      description: 'Accompagnement continu et optimisation des processus RH',
-      duration: 'Ongoing'
+      description: 'Accompagnement continu et optimisation des processus RH'
     },
     {
       step: '5',
       title: 'Reporting & Pilotage',
-      description: 'Tableaux de bord RH et indicateurs de pilotage social',
-      duration: 'Mensuel'
+      description: 'Tableaux de bord RH et indicateurs de pilotage social'
     }
   ];
 
   const caseStudies = [
     {
-      client: 'TechGrowth Solutions',
+      client: 'Entreprise Tech',
       sector: 'Services IT',
-      size: '45 collaborateurs',
-      challenge: 'Externalisation RH complète pour croissance rapide et conformité sociale',
+      size: 'Entreprise moyenne',
+      challenge: 'Externalisation RH complète pour soutenir une croissance rapide et assurer la conformité',
       solution: 'Externalisation paie + administration RH + conseil juridique + SIRH',
-      result: 'Conformité 100% + Gain temps 25h/mois + Support croissance +150%'
+      result: 'Conformité totale + Gain de temps significatif + Support à la forte croissance'
     },
     {
-      client: 'Manufacture Expert',
-      sector: 'Industrie',
-      size: '85 collaborateurs',
-      challenge: 'Optimisation charges sociales et gestion complexité conventions collectives',
+      client: 'Industrie Locale',
+      sector: 'Manufacturing',
+      size: 'Entreprise établie',
+      challenge: 'Optimisation des charges sociales et gestion de conventions collectives complexes',
       solution: 'Audit social + optimisation charges + gestion paie multi-conventions',
-      result: 'Économies charges 12% + Conformité convention + Réduction risques juridiques'
+      result: 'Économies sur charges sociales + Conformité assurée + Réduction des risques juridiques'
     },
     {
-      client: 'Services Plus',
-      sector: 'Services B2B',
-      size: '30 collaborateurs',
+      client: 'Services B2B',
+      sector: 'Services professionnels',
+      size: 'Petite entreprise',
       challenge: 'Professionnalisation RH et structuration pour développement commercial',
       solution: 'Externalisation RH intégrale + outils digitaux + politique RH',
-      result: 'Structure RH pro + Attraction talents + Focus business développement'
+      result: 'Structure RH professionnelle + Meilleure attraction des talents + Focus sur le développement'
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'Essentiel TPE',
-      price: 'À partir de 25 €/bulletin',
-      features: [
-        'Bulletins de paie conformes',
-        'Déclarations sociales',
-        'Support téléphonique',
-        'Espace client sécurisé',
-        'Attestations standards'
-      ],
-      popular: false
-    },
-    {
-      name: 'Complet PME',
-      price: 'À partir de 35 €/bulletin',
-      features: [
-        'Gestion paie complète',
-        'Administration RH',
-        'Conseil juridique inclus',
-        'Contrats et avenants',
-        'Tableaux de bord RH',
-        'Formation managers'
-      ],
-      popular: true
-    },
-    {
-      name: 'Expert Entreprise',
-      price: 'Sur devis',
-      features: [
-        'DRH externalisé à temps partagé',
-        'Gestion multi-conventions',
-        'Audit social annuel',
-        'Accompagnement restructuration',
-        'Négociation sociale',
-        'Politique RH sur-mesure'
-      ],
-      popular: false
-    }
-  ];
 
   const benefits = [
     {
@@ -254,16 +209,10 @@ const ExternalisationRHService: React.FC = () => {
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
+                  href="/contact"
                   className="w-full sm:w-auto"
                 >
-                  Audit RH gratuit
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  Calculer mes économies
+                  Contactez-nous
                 </Button>
               </div>
             </motion.div>
@@ -386,24 +335,24 @@ const ExternalisationRHService: React.FC = () => {
             >
               <div className="bg-primary/5 rounded-2xl p-6 mb-6">
                 <h3 className="text-xl font-semibold text-neutral-dark mb-4">
-                  Économies Moyennes
+                  Avantages Clés
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Coût interne RH</span>
-                    <span className="text-primary font-bold">-40%</span>
+                    <span className="text-primary font-bold">Réduction</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Temps dirigeant</span>
-                    <span className="text-primary font-bold">-60%</span>
+                    <span className="text-primary font-bold">Gain notable</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">Risques juridiques</span>
-                    <span className="text-primary font-bold">-80%</span>
+                    <span className="text-primary font-bold">Minimisés</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-dark">ROI annuel</span>
-                    <span className="text-primary font-bold">200%</span>
+                    <span className="text-primary font-bold">Élevé</span>
                   </div>
                 </div>
               </div>
@@ -649,78 +598,13 @@ const ExternalisationRHService: React.FC = () => {
                   )}
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{step.description}</p>
-                <span className="text-primary text-xs font-semibold">{step.duration}</span>
+                <p className="text-gray-300 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Tarification Simple et Transparente
-            </h2>
-            <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Des forfaits adaptés à votre effectif sans coût caché
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`h-full ${plan.popular ? 'ring-2 ring-primary' : ''} relative`}>
-                  {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Le plus complet
-                      </span>
-                    </div>
-                  )}
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-3xl font-bold text-primary mb-6">
-                      {plan.price}
-                    </p>
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-neutral-dark text-left">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      variant={plan.popular ? "primary" : "outline"} 
-                      size="lg"
-                      className="w-full"
-                    >
-                      Commencer maintenant
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
@@ -747,15 +631,7 @@ const ExternalisationRHService: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Audit RH gratuit 1h
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                href="/contact"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
-              >
-                Calculer vos économies
+                Contactez-nous
               </Button>
             </div>
           </motion.div>
