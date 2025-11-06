@@ -114,7 +114,7 @@ const Startups: React.FC = () => {
       />
 
       {/* Metrics Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {startupMetrics.map((metric, index) => (
@@ -175,7 +175,7 @@ const Startups: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Notre offre startup"
@@ -303,7 +303,7 @@ const Startups: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-3 bg-white p-4 rounded-lg"
+                  className="flex items-center gap-3 bg-white white-pattern p-4 rounded-lg"
                 >
                   <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
                     <Zap className="w-4 h-4 text-white" />
@@ -317,7 +317,7 @@ const Startups: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90">
+      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90 noise-texture">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Rocket className="w-16 h-16 mx-auto mb-6 opacity-90" />
@@ -333,7 +333,7 @@ const Startups: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-secondary"
+                className="border-white text-white hover:bg-white white-pattern hover:text-secondary"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Discuter de mon projet
@@ -342,7 +342,7 @@ const Startups: React.FC = () => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="text-white hover:bg-white/10"
+                className="text-white hover:bg-white white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Voir nos services startup

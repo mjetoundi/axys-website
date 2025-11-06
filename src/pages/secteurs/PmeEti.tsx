@@ -100,7 +100,7 @@ const PmeEti: React.FC = () => {
       />
 
       {/* Statistics Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
@@ -165,7 +165,7 @@ const PmeEti: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Nos expertises"
@@ -268,7 +268,7 @@ const PmeEti: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary to-primary/90">
+      <section className="section-padding bg-gradient-to-br from-primary to-primary/90 noise-texture">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -290,7 +290,7 @@ const PmeEti: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Découvrir nos services

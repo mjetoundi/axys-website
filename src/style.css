@@ -115,4 +115,58 @@
   .animation-delay-600 {
     animation-delay: 0.6s;
   }
+
+  /* Noise Texture Effect - For Colored Backgrounds Only */
+  .noise-texture {
+    position: relative;
+  }
+
+  .noise-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  .noise-texture > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Pattern Background - For White Backgrounds Only */
+  .white-pattern {
+    position: relative;
+  }
+
+  .white-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/Pattern.svg');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 1;
+    filter: grayscale(100%) opacity(0.5);
+  }
+
+  .white-pattern::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter2)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: overlay;
+  }
+
+  .white-pattern > * {
+    position: relative;
+    z-index: 3;
+  }
 }

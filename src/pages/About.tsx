@@ -54,7 +54,7 @@ const About: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -90,7 +90,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <motion.div
             className="text-center mb-16"
@@ -135,7 +135,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center mb-16"
@@ -183,7 +183,7 @@ const About: React.FC = () => {
       </section>
 
       {/* History Timeline */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <motion.div
             className="text-center mb-16"
@@ -227,7 +227,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Certifications & Partenaires */}
-      <section className="section-padding bg-neutral-dark text-white">
+      <section className="section-padding bg-neutral-dark text-white noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center"

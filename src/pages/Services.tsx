@@ -10,7 +10,8 @@ import {
   CheckCircle,
   Clock,
   Award,
-  Target
+  Target,
+  Server
 } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
@@ -121,6 +122,27 @@ const Services: React.FC = () => {
         'Accompagnement patrimonial',
         'Anticipation des évolutions légales'
       ]
+    },
+    {
+      id: 'systemes-information',
+      icon: Server,
+      title: 'Systèmes d\'Information',
+      subtitle: 'Audit IT et transformation digitale',
+      description: 'Audit et conseil en systèmes d\'information pour optimiser votre infrastructure IT, renforcer votre sécurité et accompagner votre transformation digitale.',
+      features: [
+        'Audit IT et cybersécurité',
+        'Conseil en infrastructure',
+        'Transformation digitale',
+        'Gouvernance des SI',
+        'Gestion de projets IT',
+        'Outils collaboratifs et Cloud'
+      ],
+      benefits: [
+        'Sécurité renforcée',
+        'Optimisation des coûts IT',
+        'Performance améliorée',
+        'Innovation technologique'
+      ]
     }
   ];
 
@@ -150,7 +172,7 @@ const Services: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -184,7 +206,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Services Detail */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <div className="space-y-16">
             {services.map((service, index) => (
@@ -281,7 +303,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center mb-16"

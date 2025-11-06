@@ -44,7 +44,7 @@ const features = [
 
 const WhyChooseAxysSection: React.FC = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary/5 via-neutral-light to-secondary/5 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-primary/5 via-neutral-light to-secondary/5 relative overflow-hidden noise-texture">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />

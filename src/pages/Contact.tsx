@@ -171,7 +171,7 @@ ${formData.message}
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -204,7 +204,7 @@ ${formData.message}
       </section>
 
       {/* Contact Methods */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <motion.div
             className="text-center mb-16"
@@ -263,7 +263,7 @@ ${formData.message}
       </section>
 
       {/* Contact Form & Map */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -522,7 +522,7 @@ ${formData.message}
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-neutral-dark via-gray-900 to-neutral-dark text-white">
+      <section className="section-padding bg-gradient-to-br from-neutral-dark via-gray-900 to-neutral-dark text-white noise-texture">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"

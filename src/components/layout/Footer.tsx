@@ -41,9 +41,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-neutral-dark text-white">
+    <footer className="bg-neutral-dark text-white noise-texture">
       {/* Newsletter Section */}
-      <div className="bg-primary">
+      <div className="bg-primary noise-texture">
         <div className="container-custom section-padding py-12">
           <motion.div
             className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0"

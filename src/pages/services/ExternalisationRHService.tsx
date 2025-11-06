@@ -184,7 +184,7 @@ const ExternalisationRHService: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding bg-gray-light">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <Breadcrumbs items={breadcrumbs} />
         
         <div className="container-custom">
@@ -279,7 +279,7 @@ const ExternalisationRHService: React.FC = () => {
       </section>
 
       {/* Service Overview */}
-      <section className="section-padding bg-gray-light">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             <motion.div
@@ -434,7 +434,7 @@ const ExternalisationRHService: React.FC = () => {
       </section>
 
       {/* Intervention Areas */}
-      <section className="section-padding bg-gray-light">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -562,7 +562,7 @@ const ExternalisationRHService: React.FC = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="section-padding bg-neutral-dark text-white">
+      <section className="section-padding bg-neutral-dark text-white noise-texture">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -607,7 +607,7 @@ const ExternalisationRHService: React.FC = () => {
 
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-white">
+      <section className="section-padding bg-primary text-white noise-texture">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

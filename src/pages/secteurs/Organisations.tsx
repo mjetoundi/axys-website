@@ -139,7 +139,7 @@ const Organisations: React.FC = () => {
       />
 
       {/* Metrics Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {associationMetrics.map((metric, index) => (
@@ -200,7 +200,7 @@ const Organisations: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Notre offre associative"
@@ -281,7 +281,7 @@ const Organisations: React.FC = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Témoignages"
@@ -307,7 +307,7 @@ const Organisations: React.FC = () => {
                       <span className="px-3 py-1 bg-secondary/10 text-secondary font-medium rounded-full">
                         {study.type}
                       </span>
-                      <span className="px-3 py-1 bg-neutral-light-bg text-neutral-gray font-medium rounded-full">
+                      <span className="px-3 py-1 bg-neutral-light-bg noise-texture text-neutral-gray font-medium rounded-full">
                         {study.budget}
                       </span>
                     </div>
@@ -398,7 +398,7 @@ const Organisations: React.FC = () => {
                 ].map((offer) => (
                   <Card
                     key={offer.title}
-                    className="text-center bg-white h-full"
+                    className="text-center bg-white white-pattern h-full"
                   >
                     <h4 className="font-bold text-neutral-dark mb-2">
                       {offer.title}
@@ -429,7 +429,7 @@ const Organisations: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90">
+      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90 noise-texture">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Heart className="w-16 h-16 mx-auto mb-6 opacity-90" />
@@ -445,7 +445,7 @@ const Organisations: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-secondary"
+                className="border-white text-white hover:bg-white white-pattern hover:text-secondary"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Contactez-nous
@@ -454,7 +454,7 @@ const Organisations: React.FC = () => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="text-white hover:bg-white/10"
+                className="text-white hover:bg-white white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Nos services

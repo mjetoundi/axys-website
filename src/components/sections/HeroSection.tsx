@@ -1,49 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Award, Users, TrendingUp } from 'lucide-react';
-import Button from '../ui/Button';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Award, Users, TrendingUp } from "lucide-react";
+import Button from "../ui/Button";
 
 const HeroSection: React.FC = () => {
   const keyPoints = [
-    { text: 'Expertise reconnue depuis plus de 20 ans', icon: Award },
-    { text: 'Équipe pluridisciplinaire d\'experts certifiés', icon: Users },
-    { text: 'Accompagnement agile, pensé pour vos défis', icon: TrendingUp }
+    { text: "Expertise reconnue depuis plus de 20 ans", icon: Award },
+    { text: "Équipe pluridisciplinaire d'experts certifiés", icon: Users },
+    { text: "Accompagnement agile, pensé pour vos défis", icon: TrendingUp },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-neutral-light via-neutral-light-bg to-blue-50">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-neutral-light via-neutral-light-bg to-blue-50 noise-texture">
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Geometric shapes */}
         <motion.div
           className="absolute top-20 right-10 w-32 h-32 bg-primary/10 rounded-full"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
-            rotate: [0, 180, 360] 
+            rotate: [0, 180, 360],
           }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
         <motion.div
           className="absolute bottom-20 left-10 w-24 h-24 bg-secondary/10 rounded-lg"
-          animate={{ 
+          animate={{
             y: [-10, 10, -10],
-            rotate: [0, 45, 0] 
+            rotate: [0, 45, 0],
           }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23288CE2' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
       </div>
 
       <div className="container-custom section-padding relative z-10">
@@ -53,7 +48,7 @@ const HeroSection: React.FC = () => {
             className="text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Badge */}
             <motion.div
@@ -75,21 +70,19 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Excellence en{' '}
-              <span className="text-gradient">
-                Audit & Conseil
-              </span>
+              Excellence en{" "}
+              <span className="text-gradient">Audit & Conseil</span>
               <br />
-              pour votre{' '}
+              pour votre{" "}
               <motion.span
                 className="text-primary"
-                animate={{ 
-                  color: ['#288CE2', '#1BA89A', '#288CE2'] 
+                animate={{
+                  color: ["#288CE2", "#1BA89A", "#288CE2"],
                 }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  ease: 'easeInOut' 
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               >
                 croissance
@@ -103,9 +96,10 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Nous accompagnons les entreprises vers l'excellence opérationnelle 
-              grâce à notre expertise en audit, en comptabilité et en conseil stratégique. 
-              Partenaire de confiance pour un développement durable et pérenne.
+              Nous accompagnons les entreprises vers l'excellence opérationnelle
+              grâce à notre expertise en audit, en comptabilité et en conseil
+              stratégique. Partenaire de confiance pour un développement durable
+              et pérenne.
             </motion.p>
 
             {/* Key Points */}
@@ -125,8 +119,13 @@ const HeroSection: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   >
-                    <IconComponent size={20} className="text-primary flex-shrink-0" />
-                    <span className="text-neutral-dark font-medium">{point.text}</span>
+                    <IconComponent
+                      size={20}
+                      className="text-primary flex-shrink-0"
+                    />
+                    <span className="text-neutral-dark font-medium">
+                      {point.text}
+                    </span>
                   </motion.div>
                 );
               })}
@@ -139,17 +138,17 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              <Button 
-                variant="primary" 
-                size="lg" 
+              <Button
+                variant="primary"
+                size="lg"
                 icon={ArrowRight}
                 href="/services"
                 className="w-full sm:w-auto"
               >
                 Découvrir nos services
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 href="/contact"
                 className="w-full sm:w-auto"
@@ -170,8 +169,8 @@ const HeroSection: React.FC = () => {
             <div className="relative">
               {/* Hero Image */}
               <div className="aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative">
-                <img 
-                  src="/images/Accueil/hero-home.jpg" 
+                <img
+                  src="/images/Accueil/hero-home.jpg"
                   alt="AXYS AUDIT - Excellence en Audit et Conseil"
                   className="w-full h-full object-cover"
                 />
@@ -183,7 +182,11 @@ const HeroSection: React.FC = () => {
               <motion.div
                 className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4"
                 animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <div className="flex items-center space-x-2">
                   <Award size={20} className="text-primary" />
@@ -196,7 +199,11 @@ const HeroSection: React.FC = () => {
               <motion.div
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4"
                 animate={{ y: [5, -5, 5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <div className="flex items-center space-x-2">
                   <Users size={20} className="text-primary" />
@@ -219,18 +226,18 @@ const HeroSection: React.FC = () => {
       >
         <motion.div
           className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
-          animate={{ 
+          animate={{
             boxShadow: [
-              '0 0 0 0px rgba(40, 140, 226, 0.4)',
-              '0 0 0 10px rgba(40, 140, 226, 0)',
-            ]
+              "0 0 0 0px rgba(40, 140, 226, 0.4)",
+              "0 0 0 10px rgba(40, 140, 226, 0)",
+            ],
           }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.div
             className="w-1 h-2 bg-primary rounded-full mt-2"
             animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       </motion.div>

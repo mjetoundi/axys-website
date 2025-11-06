@@ -95,7 +95,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-neutral-light-bg">
+    <section className="section-padding bg-neutral-light-bg noise-texture">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div

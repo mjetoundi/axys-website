@@ -119,7 +119,7 @@ const GrandesEntreprises: React.FC = () => {
       />
 
       {/* Metrics Section */}
-      <section className="section-padding bg-neutral-dark text-white">
+      <section className="section-padding bg-neutral-dark text-white noise-texture">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {enterpriseMetrics.map((metric, index) => (
@@ -211,7 +211,7 @@ const GrandesEntreprises: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Solutions entreprise"
@@ -288,7 +288,7 @@ const GrandesEntreprises: React.FC = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Références"
@@ -314,7 +314,7 @@ const GrandesEntreprises: React.FC = () => {
                       <span className="px-3 py-1 bg-primary/10 text-primary font-medium rounded-full">
                         {study.sector}
                       </span>
-                      <span className="px-3 py-1 bg-neutral-light-bg text-neutral-gray font-medium rounded-full">
+                      <span className="px-3 py-1 bg-neutral-light-bg noise-texture text-neutral-gray font-medium rounded-full">
                         {study.scope}
                       </span>
                     </div>
@@ -352,7 +352,7 @@ const GrandesEntreprises: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-neutral-dark to-primary/20">
+      <section className="section-padding bg-gradient-to-br from-neutral-dark to-primary/20 noise-texture">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Building className="w-16 h-16 mx-auto mb-6 opacity-90" />
@@ -376,7 +376,7 @@ const GrandesEntreprises: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Découvrir nos services

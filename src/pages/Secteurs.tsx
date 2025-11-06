@@ -39,7 +39,7 @@ const sectors = [
 const Secteurs: React.FC = () => {
   return (
     <div className="pt-20">
-      <section className="section-padding bg-neutral-light-bg">
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Expertise sectorielle"

@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 
 const CTASection: React.FC = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-neutral-dark via-gray-900 to-neutral-dark relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-neutral-dark via-gray-900 to-neutral-dark relative overflow-hidden noise-texture">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
