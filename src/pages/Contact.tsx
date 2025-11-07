@@ -79,7 +79,7 @@ ${formData.message}
 ═══════════════════════════════════════
 `;
 
-      const response = await fetch("https://formspree.io/f/xovpgkdr", {
+      const response = await fetch("https://formspree.io/f/xovyaaka", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
