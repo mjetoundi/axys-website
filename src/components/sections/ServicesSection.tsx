@@ -124,7 +124,7 @@ const ServicesSection: React.FC = () => {
             viewport={{ once: true }}
           >
             Des solutions{' '}
-            <span className="text-gradient">sur-mesure</span>
+            <span className="text-primary">sur-mesure</span>
             <br />
             pour chaque besoin
           </motion.h2>
@@ -141,122 +141,165 @@ const ServicesSection: React.FC = () => {
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.slice(0, 3).map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card 
-                className="h-full group cursor-pointer"
-                hover={true}
-                onClick={() => window.location.href = service.link}
-              >
-                <div className="flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
-                      <service.icon size={28} className={`${service.color} group-hover:text-white transition-colors duration-300`} />
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-3 group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-neutral-gray leading-relaxed mb-6">
-                      {service.description}
-                    </p>
+        {/* Services Grid - 3 Rows Layout: Image + 2 Rows of Services */}
+        <div className="space-y-8 mb-16">
+          {/* First Row - Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Card className="overflow-hidden p-0 group cursor-pointer hover:shadow-card-hover transition-all duration-300">
+              <div className="relative h-64 md:h-80 lg:h-96">
+                <img
+                  src="/images/Services/services-hero.jpg"
+                  alt="Nos services"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/90 via-neutral-dark/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                    <Shield size={32} className="text-white" />
                   </div>
-
-                  {/* Features */}
-                  <div className="flex-grow mb-6">
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle size={16} className="text-primary flex-shrink-0" />
-                          <span className="text-sm text-neutral-dark">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-primary font-semibold group-hover:text-blue-600 transition-colors duration-300">
-                      En savoir plus
-                    </span>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                    Expertise Complète
+                  </h3>
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6 max-w-3xl">
+                    Une gamme complète de services pour répondre à tous vos besoins en audit, conseil et gestion d'entreprise.
+                  </p>
+                  <div 
+                    className="inline-flex items-center text-white font-semibold group-hover:text-primary transition-colors duration-300 cursor-pointer"
+                    onClick={() => window.location.href = '/services'}
+                  >
+                    <span>Découvrir tous nos services</span>
                     <ArrowRight 
-                      size={18} 
-                      className="text-primary group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
+                      size={20} 
+                      className="ml-2 group-hover:translate-x-2 transition-transform duration-300" 
                     />
                   </div>
                 </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+              </div>
+            </Card>
+          </motion.div>
 
-        {/* Additional Services Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {services.slice(3).map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card 
-                className="h-full group cursor-pointer"
-                hover={true}
-                onClick={() => window.location.href = service.link}
+          {/* Second Row - First 3 Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(0, 3).map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
-                      <service.icon size={28} className={`${service.color} group-hover:text-white transition-colors duration-300`} />
+                <Card 
+                  className="h-full group cursor-pointer"
+                  hover={true}
+                  onClick={() => window.location.href = service.link}
+                >
+                  <div className="flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
+                        <service.icon size={28} className={`${service.color} group-hover:text-white transition-colors duration-300`} />
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-neutral-dark mb-3 group-hover:text-primary transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-neutral-gray leading-relaxed mb-6">
+                        {service.description}
+                      </p>
                     </div>
-                    
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-3 group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-neutral-gray leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                  </div>
 
-                  {/* Features */}
-                  <div className="flex-grow mb-6">
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle size={16} className="text-primary flex-shrink-0" />
-                          <span className="text-sm text-neutral-dark">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    {/* Features */}
+                    <div className="flex-grow mb-6">
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center space-x-3">
+                            <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                            <span className="text-sm text-neutral-dark">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  {/* CTA */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-primary font-semibold group-hover:text-blue-600 transition-colors duration-300">
-                      En savoir plus
-                    </span>
-                    <ArrowRight 
-                      size={18} 
-                      className="text-primary group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
-                    />
+                    {/* CTA */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-primary font-semibold group-hover:text-blue-600 transition-colors duration-300">
+                        En savoir plus
+                      </span>
+                      <ArrowRight 
+                        size={18} 
+                        className="text-primary group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
+                      />
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Third Row - Last 3 Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(3).map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: (index + 3) * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full group cursor-pointer"
+                  hover={true}
+                  onClick={() => window.location.href = service.link}
+                >
+                  <div className="flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
+                        <service.icon size={28} className={`${service.color} group-hover:text-white transition-colors duration-300`} />
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-neutral-dark mb-3 group-hover:text-primary transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-neutral-gray leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Features */}
+                    <div className="flex-grow mb-6">
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center space-x-3">
+                            <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                            <span className="text-sm text-neutral-dark">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-primary font-semibold group-hover:text-blue-600 transition-colors duration-300">
+                        En savoir plus
+                      </span>
+                      <ArrowRight 
+                        size={18} 
+                        className="text-primary group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
+                      />
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

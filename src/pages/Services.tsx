@@ -171,34 +171,42 @@ const Services: React.FC = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
-        <div className="container-custom">
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Services/services-hero.jpg"
+            alt="Services"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/80 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-              Nos <span className="text-gradient">Services</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Nos <span className="text-white">Services</span>
             </h1>
-            <p className="text-lg text-neutral-gray leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed mb-8">
               Des solutions expertes et personnalisées pour accompagner votre entreprise 
               dans tous les aspects de sa gestion et de son développement.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
-                <Award size={16} className="text-primary" />
-                <span className="text-sm font-semibold">Experts certifiés</span>
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                <Award size={16} className="text-white" />
+                <span className="text-sm font-semibold text-white">Experts certifiés</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
-                <Target size={16} className="text-secondary" />
-                <span className="text-sm font-semibold">Solutions sur-mesure</span>
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                <Target size={16} className="text-white" />
+                <span className="text-sm font-semibold text-white">Solutions sur-mesure</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
-                <Clock size={16} className="text-primary" />
-                <span className="text-sm font-semibold">Réactivité 24h</span>
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                <Clock size={16} className="text-white" />
+                <span className="text-sm font-semibold text-white">Réactivité 24h</span>
               </div>
             </div>
           </motion.div>
@@ -286,13 +294,28 @@ const Services: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Visual */}
+                {/* Visual with Image */}
                 <div className="flex-1 max-w-md">
-                  <Card className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center" hover={false}>
-                    <div className="text-center p-8">
-                      <service.icon size={80} className="text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-bold text-neutral-dark mb-2">{service.title}</h3>
-                      <p className="text-neutral-gray">{service.subtitle}</p>
+                  <Card className="aspect-square overflow-hidden p-0 relative group" hover={true}>
+                    <img
+                      src={
+                        service.id === 'audit' ? '/images/Services/service-audit.jpg' :
+                        service.id === 'conseil' ? '/images/Services/service-conseil.jpg' :
+                        service.id === 'expertise-comptable' ? '/images/Services/service-comptabilite.jpg' :
+                        service.id === 'externalisation-rh' ? '/images/Services/service-rh.jpg' :
+                        service.id === 'fiscalite' ? '/images/Services/service-fiscalite.jpg' :
+                        '/images/Services/service-it.jpg'
+                      }
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                        <service.icon size={32} className="text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                      <p className="text-white/90">{service.subtitle}</p>
                     </div>
                   </Card>
                 </div>
@@ -302,24 +325,39 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section with Image */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
-              Notre Méthodologie
-            </h2>
-            <p className="text-lg text-neutral-gray max-w-3xl mx-auto">
-              Une approche structurée en 4 étapes pour garantir la réussite de vos projets 
-              et l'atteinte de vos objectifs.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl overflow-hidden shadow-card-hover"
+            >
+              <img
+                src="/images/Services/process-methodology.jpg"
+                alt="Méthodologie"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <motion.div
+              className="text-center lg:text-left"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
+                Notre Méthodologie
+              </h2>
+              <p className="text-lg text-neutral-gray max-w-3xl">
+                Une approche structurée en 4 étapes pour garantir la réussite de vos projets 
+                et l'atteinte de vos objectifs.
+              </p>
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
@@ -347,11 +385,19 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-primary text-white">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-secondary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -360,7 +406,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Prêt à transformer votre entreprise ?
             </h2>
-            <p className="text-lg text-blue-100 leading-relaxed mb-8">
+            <p className="text-lg text-white/90 leading-relaxed mb-8">
               Nos experts analysent gratuitement vos besoins et vous proposent 
               une solution personnalisée. Contactez-nous dès aujourd'hui.
             </p>

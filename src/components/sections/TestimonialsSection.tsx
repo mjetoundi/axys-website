@@ -61,7 +61,7 @@ const TestimonialsSection: React.FC = () => {
             viewport={{ once: true }}
           >
             Nos clients{' '}
-            <span className="text-gradient">témoignent</span>
+            <span className="text-primary">témoignent</span>
           </motion.h2>
 
           <motion.p

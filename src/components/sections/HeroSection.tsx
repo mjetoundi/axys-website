@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Excellence en{" "}
-              <span className="text-gradient">Audit & Conseil</span>
+              <span className="text-primary">Audit & Conseil</span>
               <br />
               pour votre{" "}
               <motion.span

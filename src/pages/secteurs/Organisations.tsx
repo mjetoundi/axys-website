@@ -132,11 +132,40 @@ const Organisations: React.FC = () => {
         ]}
       />
 
-      <PageHero
-        icon={<Heart className="w-8 h-8 text-white" />}
-        title="Associations & Organisations"
-        subtitle="Accompagnement spécialisé des associations, fondations et organisations sans but lucratif. Nous comprenons vos enjeux de mission sociale et vos contraintes budgétaires."
-      />
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Secteurs/organisations.jpg"
+            alt="Associations & Organisations"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 via-primary/70 to-neutral-dark/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <motion.div
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Heart className="w-10 h-10 text-white" />
+            </motion.div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Associations & Organisations
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Accompagnement spécialisé des associations, fondations et organisations sans but lucratif. Nous comprenons vos enjeux de mission sociale et vos contraintes budgétaires.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Metrics Section */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
@@ -161,11 +190,18 @@ const Organisations: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Associations Section */}
-      <section className="section-padding">
+      {/* Why Associations Section - Image Left Layout */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="relative rounded-2xl overflow-hidden shadow-card-hover order-2 lg:order-1">
+              <img
+                src="/images/Services/service-rh.jpg"
+                alt="Associations"
+                className="w-full h-full object-cover aspect-square"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
                 Les Enjeux Spécifiques du Secteur Associatif
               </h2>
@@ -188,11 +224,6 @@ const Organisations: React.FC = () => {
                     <span className="text-sm text-neutral-dark">{benefit}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl flex items-center justify-center">
-                <Heart className="w-32 h-32 text-secondary/40" />
               </div>
             </div>
           </div>
@@ -280,7 +311,7 @@ const Organisations: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
+      {/* Case Studies Section - Image Cards */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
@@ -298,47 +329,56 @@ const Organisations: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-neutral-dark mb-2">
-                      {study.organization}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 text-sm mb-2">
-                      <span className="px-3 py-1 bg-secondary/10 text-secondary font-medium rounded-full">
-                        {study.type}
-                      </span>
-                      <span className="px-3 py-1 bg-neutral-light-bg noise-texture text-neutral-gray font-medium rounded-full">
-                        {study.budget}
-                      </span>
+                <Card className="h-full overflow-hidden p-0 hover:shadow-card-hover transition-all duration-300">
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={index === 0 ? "/images/Pages Services/rh-detail.jpg" : "/images/Pages Services/conseil-detail.jpg"}
+                      alt={study.organization}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {study.organization}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 text-sm mb-2">
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full">
+                          {study.type}
+                        </span>
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full">
+                          {study.budget}
+                        </span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-sm font-semibold text-secondary mb-1">
-                        Problématique
+                  <div className="p-6">
+                    <div className="space-y-4">
+                      <div>
+                        <div className="text-sm font-semibold text-secondary mb-1">
+                          Problématique
+                        </div>
+                        <p className="text-sm text-neutral-gray">
+                          {study.challenge}
+                        </p>
                       </div>
-                      <p className="text-sm text-neutral-gray">
-                        {study.challenge}
-                      </p>
-                    </div>
 
-                    <div>
-                      <div className="text-sm font-semibold text-secondary mb-1">
-                        Solution Axys
+                      <div>
+                        <div className="text-sm font-semibold text-secondary mb-1">
+                          Solution Axys
+                        </div>
+                        <p className="text-sm text-neutral-gray">
+                          {study.solution}
+                        </p>
                       </div>
-                      <p className="text-sm text-neutral-gray">
-                        {study.solution}
-                      </p>
-                    </div>
 
-                    <div className="pt-4 border-t border-neutral-light-bg">
-                      <div className="text-sm font-semibold text-primary mb-1">
-                        ✓ Impact
+                      <div className="pt-4 border-t border-neutral-light-bg">
+                        <div className="text-sm font-semibold text-primary mb-1">
+                          ✓ Impact
+                        </div>
+                        <p className="text-sm font-semibold text-neutral-dark">
+                          {study.result}
+                        </p>
                       </div>
-                      <p className="text-sm font-semibold text-neutral-dark">
-                        {study.result}
-                      </p>
                     </div>
                   </div>
                 </Card>
@@ -428,9 +468,17 @@ const Organisations: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90 noise-texture">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Heart className="w-16 h-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -445,7 +493,7 @@ const Organisations: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white white-pattern hover:text-secondary"
+                className="border-white text-white hover:bg-white hover:text-secondary white-pattern"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Contactez-nous
@@ -454,7 +502,7 @@ const Organisations: React.FC = () => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="text-white hover:bg-white white-pattern/10"
+                className="text-white hover:bg-white/20 hover:text-white border border-white/30 hover:border-white/50 white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Nos services

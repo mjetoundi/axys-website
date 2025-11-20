@@ -170,31 +170,39 @@ ${formData.message}
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
-        <div className="container-custom">
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/contact-hero.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/80 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-              Contactez <span className="text-gradient">AXYS AUDIT</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Contactez <span className="text-white">AXYS AUDIT</span>
             </h1>
-            <p className="text-lg text-neutral-gray leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed mb-8">
               Nos experts sont à votre disposition pour analyser vos besoins et
               vous proposer des solutions personnalisées. Échangeons sur vos
               projets !
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
-                <Clock size={16} className="text-primary" />
-                <span className="text-sm font-semibold">Réponse sous 24h</span>
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                <Clock size={16} className="text-white" />
+                <span className="text-sm font-semibold text-white">Réponse sous 24h</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/80 rounded-full px-4 py-2">
-                <CheckCircle size={16} className="text-secondary" />
-                <span className="text-sm font-semibold">
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                <CheckCircle size={16} className="text-white" />
+                <span className="text-sm font-semibold text-white">
                   Diagnostic gratuit
                 </span>
               </div>
@@ -521,11 +529,19 @@ ${formData.message}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-neutral-dark via-gray-900 to-neutral-dark text-white noise-texture">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/90 via-primary/80 to-secondary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -534,7 +550,7 @@ ${formData.message}
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Besoin d'une réponse immédiate ?
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+            <p className="text-lg text-white/90 leading-relaxed mb-8">
               Nos experts sont disponibles pour répondre à vos questions et vous
               orienter vers la meilleure solution.
             </p>

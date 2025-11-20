@@ -8,11 +8,32 @@ import { Award, Users, Lightbulb } from "lucide-react";
 const Carrieres: React.FC = () => {
   return (
     <div className="pt-20">
-      <PageHero
-        title="Carrières chez AXYS"
-        subtitle="Découvrez notre culture d'entreprise et restez informé des futures opportunités de carrière."
-        gradient={true}
-      />
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Carrières/careers-hero.jpg"
+            alt="Carrières"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <motion.div
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Carrières chez AXYS
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Découvrez notre culture d'entreprise et restez informé des futures opportunités de carrière.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Culture Section */}
       <section className="section-padding">

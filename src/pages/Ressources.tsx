@@ -14,7 +14,29 @@ const tabs = [
 const Ressources: React.FC = () => {
   return (
     <div className="pt-20">
-      <section className="section-padding bg-neutral-light-bg">
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Services/services-hero.jpg"
+            alt="Ressources"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/80 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <div className="text-center max-w-4xl mx-auto text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Ressources & <span className="text-white">Insights</span>
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Analyses, livres blancs et actualités pour éclairer vos décisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Ressources & Insights"

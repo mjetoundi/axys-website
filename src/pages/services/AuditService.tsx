@@ -167,11 +167,17 @@ const AuditService: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-2xl flex items-center justify-center">
-                <div className="text-center text-white">
-                  <BarChart3 className="w-24 h-24 mx-auto mb-4 opacity-80" />
-                  <p className="text-lg font-semibold">Audit Professionnel</p>
-                  <p className="text-blue-200">Standards Internationaux</p>
+              <div className="aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden relative">
+                <img
+                  src="/images/Pages Services/audit-detail.jpg"
+                  alt="Audit Professionnel"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <Shield className="w-16 h-16 mx-auto mb-4 opacity-90" />
+                  <p className="text-lg font-semibold text-center">Audit Professionnel</p>
+                  <p className="text-blue-200 text-center">Standards Internationaux</p>
                 </div>
               </div>
             </motion.div>

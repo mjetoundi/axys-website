@@ -106,12 +106,40 @@ const Startups: React.FC = () => {
         ]}
       />
 
-      <PageHero
-        icon={<Rocket className="w-8 h-8 text-white" />}
-        title="Startups & Croissance"
-        subtitle="Spécialisation dans l'accompagnement des startups en phase de démarrage et de croissance accélérée. Nous parlons votre langage et comprenons vos enjeux."
-        gradient={true}
-      />
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Secteurs/startups.jpg"
+            alt="Startups & Croissance"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 via-primary/70 to-neutral-dark/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <motion.div
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Rocket className="w-10 h-10 text-white" />
+            </motion.div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Startups & Croissance
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Spécialisation dans l'accompagnement des startups en phase de démarrage et de croissance accélérée. Nous parlons votre langage et comprenons vos enjeux.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Metrics Section */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
@@ -212,8 +240,8 @@ const Startups: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="section-padding">
+      {/* Case Studies Section - Image Cards */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Success stories"
@@ -230,40 +258,49 @@ const Startups: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full bg-gradient-to-br from-white to-secondary/5">
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-neutral-dark">
-                        {study.company}
-                      </h3>
-                      <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">
-                        {study.stage}
-                      </span>
+                <Card className="h-full overflow-hidden p-0 hover:shadow-card-hover transition-all duration-300 bg-gradient-to-br from-white to-secondary/5">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={index === 0 ? "/images/Pages Services/comptabilite-detail.jpg" : index === 1 ? "/images/Pages Services/audit-detail.jpg" : "/images/Pages Services/conseil-detail.jpg"}
+                      alt={study.company}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-semibold text-white">
+                          {study.company}
+                        </h3>
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
+                          {study.stage}
+                        </span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-3 text-sm">
-                    <div>
-                      <div className="font-semibold text-neutral-dark mb-1">
-                        Challenge
+                  <div className="p-6">
+                    <div className="space-y-3 text-sm">
+                      <div>
+                        <div className="font-semibold text-neutral-dark mb-1">
+                          Challenge
+                        </div>
+                        <p className="text-neutral-gray">{study.challenge}</p>
                       </div>
-                      <p className="text-neutral-gray">{study.challenge}</p>
-                    </div>
 
-                    <div>
-                      <div className="font-semibold text-neutral-dark mb-1">
-                        Solution
+                      <div>
+                        <div className="font-semibold text-neutral-dark mb-1">
+                          Solution
+                        </div>
+                        <p className="text-neutral-gray">{study.solution}</p>
                       </div>
-                      <p className="text-neutral-gray">{study.solution}</p>
-                    </div>
 
-                    <div className="pt-3 border-t border-secondary/20">
-                      <div className="font-semibold text-secondary mb-1">
-                        ✓ Résultat
+                      <div className="pt-3 border-t border-secondary/20">
+                        <div className="font-semibold text-secondary mb-1">
+                          ✓ Résultat
+                        </div>
+                        <p className="font-semibold text-neutral-dark">
+                          {study.result}
+                        </p>
                       </div>
-                      <p className="font-semibold text-neutral-dark">
-                        {study.result}
-                      </p>
                     </div>
                   </div>
                 </Card>
@@ -316,9 +353,17 @@ const Startups: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary to-secondary/90 noise-texture">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Rocket className="w-16 h-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -333,7 +378,7 @@ const Startups: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white white-pattern hover:text-secondary"
+                className="border-white text-white hover:bg-white hover:text-secondary white-pattern"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Discuter de mon projet
@@ -342,7 +387,7 @@ const Startups: React.FC = () => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="text-white hover:bg-white white-pattern/10"
+                className="text-white hover:bg-white/20 hover:text-white border border-white/30 hover:border-white/50 white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Voir nos services startup

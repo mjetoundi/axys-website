@@ -53,19 +53,27 @@ const About: React.FC = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10 noise-texture">
-        <div className="container-custom">
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/A propos/about-hero.jpg"
+            alt="À propos d'AXYS"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-              À propos d'<span className="text-gradient">AXYS AUDIT</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              À propos d'<span className="text-white">AXYS AUDIT</span>
             </h1>
-            <p className="text-lg text-neutral-gray leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed mb-8">
               Cabinet créé en 2001 par des professionnels formés dans des grandes firmes 
               internationales d'audit, AXYS s'impose comme un acteur de référence en Afrique Centrale 
               dans l'audit, l'expertise comptable et le conseil aux entreprises. Notre mission : 
@@ -73,16 +81,16 @@ const About: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">2001</div>
-                <div className="text-neutral-gray">Année de création</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">2001</div>
+                <div className="text-white/80">Année de création</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">+20 ans</div>
-                <div className="text-neutral-gray">D'expérience</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">+20 ans</div>
+                <div className="text-white/80">D'expérience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">Afrique Centrale</div>
-                <div className="text-neutral-gray">Zone d'intervention</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">Afrique Centrale</div>
+                <div className="text-white/80">Zone d'intervention</div>
               </div>
             </div>
           </motion.div>
@@ -134,24 +142,39 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section with Image */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
-              Notre Expertise
-            </h2>
-            <p className="text-lg text-neutral-gray max-w-3xl mx-auto">
-              Des professionnels expérimentés et certifiés, reconnus pour leur expertise 
-              et leur engagement auprès de nos clients.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              className="text-center lg:text-left"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
+                Notre Expertise
+              </h2>
+              <p className="text-lg text-neutral-gray max-w-3xl">
+                Des professionnels expérimentés et certifiés, reconnus pour leur expertise 
+                et leur engagement auprès de nos clients.
+              </p>
+            </motion.div>
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-card-hover"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="/images/A propos/team-expertise.jpg"
+                alt="Équipe expertise"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamStrengths.map((strength, index) => {
@@ -182,23 +205,38 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* History Timeline */}
+      {/* History Timeline with Image */}
       <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
-              Notre Histoire
-            </h2>
-            <p className="text-lg text-neutral-gray max-w-3xl mx-auto">
-              Plus de 20 années de croissance et d'innovation au service de nos clients en Afrique Centrale.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-card-hover order-2 lg:order-1"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="/images/A propos/history-timeline.jpg"
+                alt="Histoire AXYS"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
+                Notre Histoire
+              </h2>
+              <p className="text-lg text-neutral-gray">
+                Plus de 20 années de croissance et d'innovation au service de nos clients en Afrique Centrale.
+              </p>
+            </motion.div>
+          </div>
 
           <div className="max-w-4xl mx-auto">
             {milestones.map((milestone, index) => (

@@ -44,7 +44,7 @@ const CTASection: React.FC = () => {
             viewport={{ once: true }}
           >
             Prêt à faire le premier pas vers{' '}
-            <span className="text-gradient bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="text-white">
               l'excellence
             </span>
             ?

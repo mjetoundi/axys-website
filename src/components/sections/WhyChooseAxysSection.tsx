@@ -44,21 +44,45 @@ const features = [
 
 const WhyChooseAxysSection: React.FC = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary/5 via-neutral-light to-secondary/5 relative overflow-hidden noise-texture">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-      </div>
+    <section className="section-padding bg-white white-pattern relative overflow-hidden">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl overflow-hidden shadow-card-hover group"
+          >
+            <img
+              src="/images/Accueil/why-choose-axys.jpg"
+              alt="Pourquoi choisir Axys"
+              className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/40 via-transparent to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <h3 className="text-2xl font-bold mb-2">Excellence & Expertise</h3>
+              <p className="text-white/90">Plus de 20 ans d'expérience au service de votre réussite</p>
+            </div>
+          </motion.div>
 
-      <div className="container-custom relative z-10">
-        <SectionHeader
-          eyebrow="Notre différence"
-          title="Pourquoi Choisir Axys"
-          subtitle="Professionnels de l'audit et du conseil à votre écoute, prêts à s'investir pour le développement de vos activités."
-        />
+          {/* Content Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeader
+              eyebrow="Notre différence"
+              title="Pourquoi Choisir Axys"
+              subtitle="Professionnels de l'audit et du conseil à votre écoute, prêts à s'investir pour le développement de vos activités."
+            />
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const iconColor = feature.color === 'primary' ? 'text-primary' : 'text-secondary';

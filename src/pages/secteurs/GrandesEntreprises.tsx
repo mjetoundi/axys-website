@@ -112,11 +112,40 @@ const GrandesEntreprises: React.FC = () => {
         ]}
       />
 
-      <PageHero
-        icon={<Building className="w-8 h-8 text-white" />}
-        title="Grandes Entreprises"
-        subtitle="Expertise complète des défis spécifiques aux grands groupes et organisations complexes. Solutions industrielles pour enjeux d'envergure."
-      />
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Secteurs/grandes-entreprises.jpg"
+            alt="Grandes Entreprises"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 via-primary/70 to-secondary/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <motion.div
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Building className="w-10 h-10 text-white" />
+            </motion.div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Grandes Entreprises
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Expertise complète des défis spécifiques aux grands groupes et organisations complexes. Solutions industrielles pour enjeux d'envergure.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Metrics Section */}
       <section className="section-padding bg-neutral-dark text-white noise-texture">
@@ -141,17 +170,27 @@ const GrandesEntreprises: React.FC = () => {
         </div>
       </section>
 
-      {/* Enterprise Challenges Section */}
-      <section className="section-padding">
+      {/* Enterprise Challenges Section - Split Layout with Image */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <SectionHeader
-              eyebrow="Complexité maîtrisée"
-              title="Les Défis des Grandes Organisations"
-              subtitle="Nous comprenons la complexité inhérente aux grands groupes"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeader
+                eyebrow="Complexité maîtrisée"
+                title="Les Défis des Grandes Organisations"
+                subtitle="Nous comprenons la complexité inhérente aux grands groupes"
+              />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-card-hover">
+              <img
+                src="/images/Services/service-audit.jpg"
+                alt="Audit grandes entreprises"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               {[
                 {
                   title: "Multi-juridictions",
@@ -205,12 +244,11 @@ const GrandesEntreprises: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Modern Grid Layout */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
@@ -219,37 +257,71 @@ const GrandesEntreprises: React.FC = () => {
             subtitle="Une offre industrielle pour répondre à vos enjeux d'échelle et de complexité"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-card-hover transition-shadow duration-300 border-l-4 border-primary">
+          <div className="space-y-8 mt-12">
+            {/* First service with image - Full width */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Card className="h-full overflow-hidden p-0 hover:shadow-card-hover transition-shadow duration-300">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div className="relative h-64 md:h-auto">
+                    <img
+                      src="/images/Services/service-conseil.jpg"
+                      alt="Audit Consolidé International"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8 flex flex-col justify-center">
                     <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-7 h-7 text-primary" />
+                      <Globe className="w-7 h-7 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold text-neutral-dark mb-3">
-                      {service.title}
+                      {services[0].title}
                     </h3>
                     <p className="text-neutral-gray leading-relaxed">
-                      {service.description}
+                      {services[0].description}
                     </p>
-                  </Card>
-                </motion.div>
-              );
-            })}
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Other services - Grid layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {services.slice(1).map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (index + 1) * 0.1 }}
+                  >
+                    <Card className="h-full hover:shadow-card-hover transition-shadow duration-300 border-l-4 border-primary">
+                      <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <Icon className="w-7 h-7 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-neutral-dark mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-neutral-gray leading-relaxed">
+                        {service.description}
+                      </p>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="section-padding">
+      {/* Capabilities Section - Alternating Layout */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Notre approche"
@@ -287,7 +359,7 @@ const GrandesEntreprises: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
+      {/* Case Studies Section - Image Cards */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
@@ -305,43 +377,52 @@ const GrandesEntreprises: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <Card className="h-full">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-neutral-dark mb-2">
-                      {study.company}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 text-sm">
-                      <span className="px-3 py-1 bg-primary/10 text-primary font-medium rounded-full">
-                        {study.sector}
-                      </span>
-                      <span className="px-3 py-1 bg-neutral-light-bg noise-texture text-neutral-gray font-medium rounded-full">
-                        {study.scope}
-                      </span>
+                <Card className="h-full overflow-hidden p-0">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={index === 0 ? "/images/Services/service-comptabilite.jpg" : "/images/Services/service-it.jpg"}
+                      alt={study.company}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {study.company}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full">
+                          {study.sector}
+                        </span>
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full">
+                          {study.scope}
+                        </span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-sm font-semibold text-primary mb-2">
-                        Problématique
+                  <div className="p-6">
+                    <div className="space-y-4">
+                      <div>
+                        <div className="text-sm font-semibold text-primary mb-2">
+                          Problématique
+                        </div>
+                        <p className="text-neutral-gray">{study.challenge}</p>
                       </div>
-                      <p className="text-neutral-gray">{study.challenge}</p>
-                    </div>
 
-                    <div>
-                      <div className="text-sm font-semibold text-primary mb-2">
-                        Solution Déployée
+                      <div>
+                        <div className="text-sm font-semibold text-primary mb-2">
+                          Solution Déployée
+                        </div>
+                        <p className="text-neutral-gray">{study.solution}</p>
                       </div>
-                      <p className="text-neutral-gray">{study.solution}</p>
-                    </div>
 
-                    <div className="pt-4 border-t border-neutral-light-bg">
-                      <div className="text-sm font-semibold text-secondary mb-2">
-                        ✓ Impact Mesurable
+                      <div className="pt-4 border-t border-neutral-light-bg">
+                        <div className="text-sm font-semibold text-secondary mb-2">
+                          ✓ Impact Mesurable
+                        </div>
+                        <p className="font-semibold text-neutral-dark">
+                          {study.result}
+                        </p>
                       </div>
-                      <p className="font-semibold text-neutral-dark">
-                        {study.result}
-                      </p>
                     </div>
                   </div>
                 </Card>
@@ -351,9 +432,17 @@ const GrandesEntreprises: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-neutral-dark to-primary/20 noise-texture">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/90 via-primary/80 to-secondary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <Building className="w-16 h-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -376,7 +465,7 @@ const GrandesEntreprises: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white white-pattern/10"
+                className="border-white text-white hover:bg-white hover:text-neutral-dark white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Découvrir nos services

@@ -93,11 +93,40 @@ const PmeEti: React.FC = () => {
         ]}
       />
 
-      <PageHero
-        icon={<Building2 className="w-8 h-8 text-white" />}
-        title="PME & ETI"
-        subtitle="Accompagnement global des entreprises de taille moyenne en croissance. Nous maîtrisons les spécificités des PME et ETI et leurs enjeux d'accélération."
-      />
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Secteurs/pme-eti.jpg"
+            alt="PME & ETI"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-secondary/70 to-neutral-dark/60"></div>
+        </div>
+        <div className="container-custom relative z-10 py-20">
+          <motion.div
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Building2 className="w-10 h-10 text-white" />
+            </motion.div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              PME & ETI
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              Accompagnement global des entreprises de taille moyenne en croissance. Nous maîtrisons les spécificités des PME et ETI et leurs enjeux d'accélération.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Statistics Section */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
@@ -122,8 +151,8 @@ const PmeEti: React.FC = () => {
         </div>
       </section>
 
-      {/* Why PME & ETI Section */}
-      <section className="section-padding">
+      {/* Why PME & ETI Section - Image Right Layout */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -155,16 +184,18 @@ const PmeEti: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-                <Users className="w-32 h-32 text-primary/40" />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-card-hover">
+              <img
+                src="/images/Services/service-comptabilite.jpg"
+                alt="PME ETI"
+                className="w-full h-full object-cover aspect-square"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Alternating Layout */}
       <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <SectionHeader
@@ -173,9 +204,10 @@ const PmeEti: React.FC = () => {
             subtitle="Une offre complète pour accompagner votre croissance à chaque étape"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="space-y-8 mt-12">
             {services.map((service, index) => {
               const Icon = service.icon;
+              const isEven = index % 2 === 0;
               return (
                 <motion.div
                   key={service.title}
@@ -184,16 +216,27 @@ const PmeEti: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-card-hover transition-shadow duration-300">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-7 h-7 text-primary" />
+                  <Card className="h-full overflow-hidden p-0 hover:shadow-card-hover transition-all duration-300">
+                    <div className={`grid grid-cols-1 md:grid-cols-2 gap-0 ${!isEven ? 'md:flex-row-reverse' : ''}`}>
+                      <div className={`relative h-64 md:h-auto ${!isEven ? 'md:order-2' : ''}`}>
+                        <img
+                          src={index === 0 ? "/images/Pages Services/audit-detail.jpg" : index === 1 ? "/images/Pages Services/comptabilite-detail.jpg" : index === 2 ? "/images/Pages Services/conseil-detail.jpg" : "/images/Pages Services/rh-detail.jpg"}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className={`p-8 flex flex-col justify-center ${!isEven ? 'md:order-1' : ''}`}>
+                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                          <Icon className="w-7 h-7 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-neutral-dark mb-3">
+                          {service.title}
+                        </h3>
+                        <p className="text-neutral-gray leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-neutral-dark mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-neutral-gray leading-relaxed">
-                      {service.description}
-                    </p>
                   </Card>
                 </motion.div>
               );
@@ -202,8 +245,8 @@ const PmeEti: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="section-padding">
+      {/* Case Studies Section - Image Cards */}
+      <section className="section-padding bg-white white-pattern">
         <div className="container-custom">
           <SectionHeader
             eyebrow="Cas clients"
@@ -220,44 +263,53 @@ const PmeEti: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-semibold text-neutral-dark mb-2">
-                      {study.company}
-                    </h3>
-                    <div className="flex gap-2 text-sm text-neutral-gray">
-                      <span>{study.sector}</span>
-                      <span>•</span>
-                      <span>{study.size}</span>
+                <Card className="h-full overflow-hidden p-0 hover:shadow-card-hover transition-all duration-300">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={index === 0 ? "/images/Pages Services/comptabilite-detail.jpg" : index === 1 ? "/images/Pages Services/audit-detail.jpg" : "/images/Pages Services/conseil-detail.jpg"}
+                      alt={study.company}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-lg font-semibold text-white mb-2">
+                        {study.company}
+                      </h3>
+                      <div className="flex gap-2 text-sm text-white/90">
+                        <span>{study.sector}</span>
+                        <span>•</span>
+                        <span>{study.size}</span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-sm font-semibold text-primary mb-1">
-                        Challenge
+                  <div className="p-6">
+                    <div className="space-y-4">
+                      <div>
+                        <div className="text-sm font-semibold text-primary mb-1">
+                          Challenge
+                        </div>
+                        <p className="text-sm text-neutral-gray">
+                          {study.challenge}
+                        </p>
                       </div>
-                      <p className="text-sm text-neutral-gray">
-                        {study.challenge}
-                      </p>
-                    </div>
 
-                    <div>
-                      <div className="text-sm font-semibold text-primary mb-1">
-                        Solution Axys
+                      <div>
+                        <div className="text-sm font-semibold text-primary mb-1">
+                          Solution Axys
+                        </div>
+                        <p className="text-sm text-neutral-gray">
+                          {study.solution}
+                        </p>
                       </div>
-                      <p className="text-sm text-neutral-gray">
-                        {study.solution}
-                      </p>
-                    </div>
 
-                    <div className="pt-4 border-t border-neutral-light-bg">
-                      <div className="text-sm font-semibold text-secondary mb-1">
-                        Résultat
+                      <div className="pt-4 border-t border-neutral-light-bg">
+                        <div className="text-sm font-semibold text-secondary mb-1">
+                          Résultat
+                        </div>
+                        <p className="text-sm font-semibold text-neutral-dark">
+                          {study.result}
+                        </p>
                       </div>
-                      <p className="text-sm font-semibold text-neutral-dark">
-                        {study.result}
-                      </p>
                     </div>
                   </div>
                 </Card>
@@ -267,9 +319,17 @@ const PmeEti: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary to-primary/90 noise-texture">
-        <div className="container-custom">
+      {/* CTA Section with Image Background */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/Contact/cta-contact.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-secondary/70"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Prêt à Accélérer Votre Croissance ?
@@ -290,7 +350,7 @@ const PmeEti: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white white-pattern/10"
+                className="border-white text-white hover:bg-white hover:text-neutral-dark white-pattern/10"
                 onClick={() => (window.location.href = "/services")}
               >
                 Découvrir nos services
