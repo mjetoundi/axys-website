@@ -203,7 +203,7 @@ ${formData.message}
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
                 <CheckCircle size={16} className="text-white" />
                 <span className="text-sm font-semibold text-white">
-                  Diagnostic gratuit
+                  Expertise disponible
                 </span>
               </div>
             </div>

@@ -342,10 +342,10 @@ const PmeEti: React.FC = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => (window.location.href = "/contact")}
+                href="/contact"
+                icon={ArrowRight}
               >
-                Demander un diagnostic
-                <ArrowRight className="ml-2 w-5 h-5" />
+                Contactez-nous
               </Button>
               <Button
                 variant="outline"

@@ -187,9 +187,10 @@ const SystemesInformationService: React.FC = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
+                  href="/services/systemes-information"
                   className="w-full sm:w-auto"
                 >
-                  Nos expertises IT
+                  En savoir plus
                 </Button>
               </div>
             </motion.div>

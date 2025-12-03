@@ -418,7 +418,7 @@ const Services: React.FC = () => {
                 href="/contact"
                 className="w-full sm:w-auto"
               >
-                Diagnostic gratuit
+                Contactez-nous
               </Button>
               <Button 
                 variant="outline" 

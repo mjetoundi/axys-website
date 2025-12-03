@@ -495,8 +495,8 @@ const FiscaliteService: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="section-padding">
+      {/* Why Choose Us */}
+      <section className="section-padding bg-neutral-light-bg noise-texture">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -506,65 +506,85 @@ const FiscaliteService: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-              Succès d'Optimisation Fiscale
+              Pourquoi Choisir Notre Expertise Fiscale ?
             </h2>
             <p className="text-lg text-gray-support max-w-3xl mx-auto">
-              Découvrez les économies réalisées par nos clients
+              Une expertise reconnue pour optimiser votre fiscalité en toute légalité
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full">
-                  <div className="p-6">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <span className="text-primary font-semibold text-sm">
-                          {study.client.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-neutral-dark">{study.client}</h3>
-                        <p className="text-sm text-gray-support">{study.sector} • {study.size}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4 text-sm">
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Enjeu:</h4>
-                        <p className="text-gray-support">{study.challenge}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Solution:</h4>
-                        <p className="text-gray-support">{study.solution}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-neutral-dark mb-1">Résultat:</h4>
-                        <p className="text-primary font-semibold">{study.result}</p>
-                      </div>
-                    </div>
-                    
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      icon={ArrowRight}
-                      className="mt-4 w-full"
-                    >
-                      Voir l'étude complète
-                    </Button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full text-center">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <PiggyBank className="w-8 h-8 text-primary" />
                   </div>
-                </Card>
-              </motion.div>
-            ))}
+                  <div className="text-4xl font-bold text-primary mb-2">30%</div>
+                  <div className="text-neutral-dark font-semibold mb-1">Économie moyenne</div>
+                  <div className="text-sm text-gray-support">Sur charges fiscales</div>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full text-center">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-neutral-dark font-semibold mb-1">Conformité</div>
+                  <div className="text-sm text-gray-support">Légale garantie</div>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full text-center">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">200+</div>
+                  <div className="text-neutral-dark font-semibold mb-1">Optimisations</div>
+                  <div className="text-sm text-gray-support">Réalisées annuellement</div>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full text-center">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">8+</div>
+                  <div className="text-neutral-dark font-semibold mb-1">Fiscalistes experts</div>
+                  <div className="text-sm text-gray-support">Spécialisés par secteur</div>
+                </div>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>

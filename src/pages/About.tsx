@@ -47,8 +47,8 @@ const About: React.FC = () => {
     { year: '2001', event: 'Création d\'AXYS par des professionnels formés dans des grandes firmes internationales' },
     { year: '2005', event: 'Consolidation de nos activités en audit et expertise comptable' },
     { year: '2010', event: 'Développement de nos services en conseil et fiscalité' },
-    { year: '2015', event: 'Agrément de la Commission de Surveillance du Marché Financier (COSUMAF)' },
-    { year: '2020', event: 'Extension des services et renforcement de la présence en Afrique Centrale' }
+    { year: '2020', event: 'Extension des services et renforcement de la présence en Afrique Centrale' },
+    { year: '2023', event: 'Agrément de la Commission de Surveillance du Marché Financier (COSUMAF)' }
   ];
 
   return (
@@ -61,7 +61,7 @@ const About: React.FC = () => {
             alt="À propos d'AXYS"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 via-primary/70 to-secondary/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 via-primary/80 to-secondary/70"></div>
         </div>
         <div className="container-custom relative z-10 py-20">
           <motion.div
