@@ -151,13 +151,6 @@ const AuditService: React.FC = () => {
                 >
                   Contactez-nous
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  Télécharger la brochure
-                </Button>
               </div>
             </motion.div>
 

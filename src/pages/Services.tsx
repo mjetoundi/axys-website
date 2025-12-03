@@ -420,14 +420,6 @@ const Services: React.FC = () => {
               >
                 Contactez-nous
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                href="/ressources/telecharges"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
-              >
-                Télécharger notre brochure
-              </Button>
             </div>
           </motion.div>
         </div>
