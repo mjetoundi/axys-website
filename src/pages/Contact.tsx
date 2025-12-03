@@ -131,7 +131,7 @@ ${formData.message}
     {
       icon: Mail,
       title: "Email",
-      details: ["axysaudit@axysaudit.com", "Réponse sous 24h"],
+      details: ["axysaudit@axysaudit.com"],
       action: "Envoyez-nous un message",
     },
     {
@@ -196,10 +196,6 @@ ${formData.message}
               projets !
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
-                <Clock size={16} className="text-white" />
-                <span className="text-sm font-semibold text-white">Réponse sous 24h</span>
-              </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
                 <CheckCircle size={16} className="text-white" />
                 <span className="text-sm font-semibold text-white">
@@ -301,7 +297,7 @@ ${formData.message}
                       Message envoyé !
                     </h4>
                     <p className="text-neutral-gray">
-                      Nous vous répondrons sous 24h.
+                      Nous vous répondrons dans les plus brefs délais.
                     </p>
                   </motion.div>
                 ) : submitError ? (
